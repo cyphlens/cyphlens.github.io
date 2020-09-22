@@ -38,3 +38,15 @@ div#timeline {
 	font-weight: 500;
 	color: #FFFFFF;
 }
+
+div#copyright {
+	position:fixed;
+	bottom:3px;
+	height:4%;
+	width:100%;
+	text-align: center;
+	color: #FFFFFF;
+	font-family: "Helvetica Neue";
+	font-weight: 300;
+	font-size: 0.8em;
+}
