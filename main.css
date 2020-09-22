@@ -2,6 +2,13 @@
 html, body {margin:0; padding:0; height: 100%; font-size:100%; background-color: #1F1F1F;}
 img {margin:0; padding:0; border:0; text-decoration:none;}
 
+body {
+	background-blend-mode: color-dodge;
+	background-image: url('images/background@3x.png');
+	background-color: #1F1F1F;
+	background-size: cover;
+}
+
 div#logo {
 	position: absolute;
 	top: 28%;
