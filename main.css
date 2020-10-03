@@ -1,6 +1,13 @@
 /* Some basic css */
-html, body {margin:0; padding:0; height: 100%; font-size:100%; background-color: #1F1F1F;}
+html, body {margin:0; padding:0; height: 100%; font-size:100%;}
 img {margin:0; padding:0; border:0; text-decoration:none;}
+
+body {
+	background-blend-mode: color-dodge;
+	background-image: url('images/background@3x.png');
+	background-color: #1F1F1F;
+	background-size: cover;
+}
 
 div#logo {
 	position: absolute;
@@ -29,4 +36,17 @@ div#timeline {
 	font-family: "Helvetica Neue";
 	font-size: 1.4em;
 	font-weight: 500;
+	color: #FFFFFF;
+}
+
+div#copyright {
+	position:fixed;
+	bottom:3px;
+	height:5%;
+	width:100%;
+	text-align: center;
+	color: #FFFFFF;
+	font-family: "Helvetica Neue";
+	font-weight: 300;
+	font-size: 0.8em;
 }
