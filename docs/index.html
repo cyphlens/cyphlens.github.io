@@ -1,0 +1,519 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Cyphlens SDK Reference</title>
+    <link href="images/favicon.ico" rel="icon" type="image/ico" />
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;html&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="html">html</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#configuration" class="toc-h1 toc-link" data-title="Configuration">Configuration</a>
+          </li>
+          <li>
+            <a href="#cyphlens-images" class="toc-h1 toc-link" data-title="Cyphlens Images">Cyphlens Images</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#display-a-cyphlens-image" class="toc-h2 toc-link" data-title="Display a Cyphlens Image">Display a Cyphlens Image</a>
+                  </li>
+                  <li>
+                    <a href="#get-verification-status" class="toc-h2 toc-link" data-title="Get Verification Status">Get Verification Status</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='mailto:info@cyphme.com'>Sign Up for a Business Account</a></li>
+            <li><a href='mailto:support@cyphme.com'>Contact Support</a></li>
+            <li><span>&nbsp;</span></li>
+            <li><span>&nbsp;</span></li>
+            <li><div style="text-align:center"><span style="display:inline-block;font-size:0.9em;">© Dualities Inc, 2020. All Rights Reserved.</span></div></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Cyphlens Javascript SDK documentation! You can use our Javascript SDK to enable Cyphlens swipe functionality and mobile browser verification for an even more seamless user experience. Without the Javascript SDK, end-users can still benefit from all other features Cyphlens offers.</p>
+
+<p>We have language bindings in HTML/Javascript. You can view code examples in the dark area to the right.</p>
+
+<aside class="success">
+Note — this documentation is for the frontend SDK version 1.0 and earlier.
+</aside>
+<h1 id='configuration'>Configuration</h1>
+<blockquote>
+<p>To use the SDK, include this code in your webpage:</p>
+</blockquote>
+<pre class="highlight html tab-html"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://api.cyphme.com/resources/cyph-client/index.js?clientId=CLIENT_ID"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>CLIENT_ID</code> with a valid client ID.</p>
+</blockquote>
+
+<p>In order to use the SDK, you need a Client ID. You can request a Client ID by <a href="mailto:info@cyphme.com">signing up</a> for a business account.</p>
+
+<p>Once the Cyphlens SDK script has been included in the webpage and correctly configured, the class <code>CyphClient</code> can be used within the Javascript code of the webpage in order to make API calls to the Cyphlens backend.</p>
+
+<aside class="notice">
+You must replace <code>CLIENT_ID</code> with a valid client ID.
+</aside>
+<h1 id='cyphlens-images'>Cyphlens Images</h1><h2 id='display-a-cyphlens-image'>Display a Cyphlens Image</h2>
+<blockquote>
+<p>This HTML code will render the HTML page shown to the left.</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span> <span class="nx">lang</span><span class="o">=</span><span class="s2">"en"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">Cyphlens</span> <span class="nx">Demo</span><span class="o">&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">"UTF-8"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"viewport"</span> <span class="nx">content</span><span class="o">=</span><span class="s2">"width=device-width, initial-scale=1"</span><span class="o">&gt;</span>
+
+    <span class="c1">// CSS</span>
+    <span class="o">&lt;</span><span class="nx">link</span> <span class="nx">rel</span><span class="o">=</span><span class="s2">"stylesheet"</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/css"</span> <span class="nx">href</span><span class="o">=</span><span class="s2">"../static/css/v19_main.css"</span><span class="o">&gt;</span>
+
+    <span class="c1">// Cyphlens Javascript SDK</span>
+    <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://api.cyphme.com/resources/cyph-client/index.js?clientId=8l653sFdAXBLbIw76uJ1BSvHxGqOt5Qsabcdefgh"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+    <span class="c1">// Other Javascript</span>
+    <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"../static/vendor/jquery/jquery-3.2.1.min.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"../static/js/v19_main.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+    <span class="c1">// Cyphlens Backend API</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">imageType</span><span class="o">===</span><span class="s1">'SVG'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$scope</span><span class="p">.</span><span class="nx">imageURL</span> <span class="o">=</span> <span class="s1">'data:image/svg+xml;base64,'</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">image</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">$scope</span><span class="p">.</span><span class="nx">imageURL</span> <span class="o">=</span> <span class="s1">'data:image/png+xml;base64,'</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">image</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">sessionId</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">sessionId</span><span class="p">;</span>
+<span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">body</span> <span class="nx">ng</span><span class="o">-</span><span class="nx">app</span><span class="o">=</span><span class="s2">"cyph"</span> <span class="nx">ng</span><span class="o">-</span><span class="nx">controller</span><span class="o">=</span><span class="s2">"LoginController"</span> <span class="nx">ng</span><span class="o">-</span><span class="nx">init</span><span class="o">=</span><span class="s2">"enableCyphClient(true)"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"form_wrapper"</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"form_wrapper"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"container-login100"</span><span class="o">&gt;</span>
+
+            <span class="c">&lt;!--</span> <span class="nx">Company</span> <span class="nx">Logo</span> <span class="o">--&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"container-logo100"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"../static/images/cyph_gray_logo.png"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
+            <span class="c">&lt;!--</span> <span class="nx">Login</span> <span class="nx">Form</span> <span class="o">--&gt;</span>         
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"cyph-card p-l-55 p-r-55 p-t-65 p-b-50"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">form</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"login100-form validate-form"</span><span class="o">&gt;</span>
+
+                    <span class="c">&lt;!--</span> <span class="nx">Title</span> <span class="o">--&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"cyph-form-title p-b-33"</span><span class="o">&gt;</span>
+                        <span class="nx">Verify</span> <span class="k">this</span> <span class="nx">code</span> <span class="kd">with</span> <span class="nx">your</span> <span class="nx">Cyph</span> <span class="nx">app</span>
+                    <span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>
+                    <span class="c">&lt;!--</span> <span class="nx">CYPHLENS</span> <span class="nx">IMAGE</span><span class="o">!</span> <span class="o">--&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"cyph-image"</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"svg"</span> <span class="nx">height</span><span class="o">=</span><span class="s2">"210px"</span> <span class="nx">ng</span><span class="o">-</span><span class="nx">src</span><span class="o">=</span><span class="s2">"{{imageURL}}"</span><span class="o">/&gt;</span>
+                    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
+                    <span class="c">&lt;!--</span> <span class="nx">PIN</span> <span class="nx">Input</span> <span class="nx">Field</span> <span class="o">--&gt;</span>    
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"wrap-input100"</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">input</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"input100"</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"password"</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"pin"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">"..or type the passcode here"</span> <span class="nx">ng</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="s2">"loginDTO.passcode"</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="sr">/div&gt;                 </span><span class="err"> 
+</span>
+                    <span class="c">&lt;!--</span> <span class="nx">Verify</span> <span class="nx">Button</span> <span class="o">--&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"container-login100-form-btn m-t-20"</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">button</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"login100-form-btn"</span> <span class="nx">ng</span><span class="o">-</span><span class="nx">click</span><span class="o">=</span><span class="s2">"verifyLogin()"</span><span class="o">&gt;</span>
+                            <span class="nx">Verify</span>
+                        <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>                    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>                    <span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
+
+                    <span class="c">&lt;!--</span> <span class="nx">Refresh</span> <span class="nx">Cyphlens</span> <span class="nx">Image</span> <span class="o">--&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"text-center"</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">"#"</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"txt2 hov1"</span> <span class="nx">ng</span><span class="o">-</span><span class="nx">click</span><span class="o">=</span><span class="s2">"authenticate()"</span><span class="o">&gt;</span>
+                            <span class="nx">Refresh</span>
+                        <span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span>                    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span></code></pre>
+<p>The sample code to the right will render the HTML page in the screenshot below.</p>
+
+<p><img src="./images/cyphlens_demo.png"></p>
+<h2 id='get-verification-status'>Get Verification Status</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+
+  <span class="kd">function</span> <span class="nx">printStatus</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">status</span><span class="o">===</span><span class="s2">"SUCCESS"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Cyph Verified!"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">status</span><span class="o">===</span><span class="s2">"EXPIRED"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Cyph Expired. Please try again."</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nx">CyphClient</span><span class="p">.</span><span class="nx">getStatus</span><span class="p">(</span><span class="s2">"61958d6943d1493bb9843d550368XXXX"</span><span class="p">,</span> <span class="nx">printStatus</span><span class="p">);</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+<blockquote>
+<p>On success, the <code>getStatus</code> command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"61958d6943d1493bb9843d550368XXXX"</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Error responses have JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid access token"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid IP address"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"404"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User not found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint returns the status of a Cyphlens verification process initiated by the end-user using the swipe functionality within the Cyphlens app.</p>
+
+<p>Both the Cyphlens image and the corresponding sessionId are returned by the <a href="https://www.cyphme.com/docs">backend API</a> calls <code>/login/getCyph</code> and <code>/transaction/getCyph</code> used for requesting a Cyphlens Image for a user.</p>
+<h3 id='javascript-request'>Javascript Request</h3>
+<p><code>CyphClient.getStatus(sessionId, callbackFunction)</code></p>
+<h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sessionId</td>
+<td>A unique object ID associated to a Cyphlens Image.</td>
+</tr>
+<tr>
+<td>callbackFunction</td>
+<td>The callback function to call when a Cyphlens status is returned.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sessionId</td>
+<td>A unique object ID associated to a Cyphlens Image.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>The current status of a Cyphlens verification by the end-user.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameter-status'>Response Parameter <code>status</code></h3>
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PENDING</td>
+<td>The end-user has not yet verified the Cyphlens Image. End-user action is pending.</td>
+</tr>
+<tr>
+<td>SUCCESS</td>
+<td>The end-user has successfully verified the Cyphlens Image.</td>
+</tr>
+<tr>
+<td>EXPIRED</td>
+<td>The Cyphlens Image has expired and is no longer available.</td>
+</tr>
+<tr>
+<td>FAILURE</td>
+<td>The Cyphlens Image and the end-user session could not be verified due to either invalid data or a server error.</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+Remember — a Cyphlens Image used for either login 2FA or transaction verification is valid for only 60 seconds!
+</aside>
+<h1 id='errors'>Errors</h1>
+<p>The Cyphlens API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request has some invalid or missing data.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Either your API key is wrong, your access token is wrong or your IP address is invalid.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified end-user could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access the Cyphlens API with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re sending too many requests! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="html">html</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

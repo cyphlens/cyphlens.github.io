@@ -1,0 +1,1627 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Cyphlens API Reference</title>
+    <link href="images/favicon.ico" rel="icon" type="image/ico" />
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;java&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="python">python</a>
+              <a href="#" data-language-name="java">java</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#request-an-access-token" class="toc-h2 toc-link" data-title="Request an Access Token">Request an Access Token</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-end-user-account-info" class="toc-h2 toc-link" data-title="Get End User Account Info">Get End User Account Info</a>
+                  </li>
+                  <li>
+                    <a href="#enable-end-user" class="toc-h2 toc-link" data-title="Enable End User">Enable End User</a>
+                  </li>
+                  <li>
+                    <a href="#delete-end-user" class="toc-h2 toc-link" data-title="Delete End User">Delete End User</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#cyphlens-images" class="toc-h1 toc-link" data-title="Cyphlens Images">Cyphlens Images</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#display-a-cyphlens-image" class="toc-h2 toc-link" data-title="Display a Cyphlens Image">Display a Cyphlens Image</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-login-cyphlens-image" class="toc-h2 toc-link" data-title="Get a Login Cyphlens Image">Get a Login Cyphlens Image</a>
+                  </li>
+                  <li>
+                    <a href="#verify-a-login-cyphlens-image" class="toc-h2 toc-link" data-title="Verify a Login Cyphlens Image">Verify a Login Cyphlens Image</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-transaction-cyphlens-image" class="toc-h2 toc-link" data-title="Get a Transaction Cyphlens Image">Get a Transaction Cyphlens Image</a>
+                  </li>
+                  <li>
+                    <a href="#verify-a-transaction-cyphlens-image" class="toc-h2 toc-link" data-title="Verify a Transaction Cyphlens Image">Verify a Transaction Cyphlens Image</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='mailto:info@cyphme.com'>Sign Up for an API Key</a></li>
+            <li><a href='mailto:support@cyphme.com'>Contact Support</a></li>
+            <li><span>&nbsp;</span></li>
+            <li><span>&nbsp;</span></li>
+            <li><div style="text-align:center"><span style="display:inline-block;font-size:0.9em;">© Dualities Inc, 2020. All Rights Reserved.</span></div></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Cyphlens API documentation! You can use our API to access Cyphlens API endpoints, which can be used to register users, delete users, create and verify cyphs for different users.</p>
+
+<p>We have language bindings in Shell, Python, and Java! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+
+<p>API base URL: <code>https://api.cyphme.com/api/v1/business/</code></p>
+
+<aside class="success">
+Note — this documentation is for API version 1.0 and earlier.
+</aside>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"api_endpoint_here"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+  <span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'my_access_token'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="s">""</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl -X POST <span class="s2">"api_endpoint_here"</span>
+     -H <span class="s2">"x-access-token: my_access_token"</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"api_endpoint_here"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="s">""</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"x-access-token"</span><span class="o">,</span> <span class="s">"my_access_token"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>my_access_token</code> with a valid access token.</p>
+</blockquote>
+
+<p>Cyphlens uses API keys and Access Tokens to allow access to the API. You can request a new Cyphlens API key and secret via your <strong>Admin Dashboard</strong> after <a href="mailto:info@cyphme.com">registration</a> has successfully completed for your business. Also, using this dashboard, you will be able to upload your company logo and verify your connection information.</p>
+
+<p>The API key and secret must be included in the API request used to obtain or renew an <a href="#request-an-access-token">Access Token</a>. Cyphlens expects for an Access Token to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code>x-access-token: my_access_token</code></p>
+
+<aside class="notice">
+You must replace <code>my_access_token</code> with a valid access token.
+</aside>
+<h2 id='request-an-access-token'>Request an Access Token</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.cyphme.com/api/v1/business/getAccessToken"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+  <span class="s">'x-client-id'</span><span class="p">:</span> <span class="s">'my_api_key'</span><span class="p">,</span>
+  <span class="s">'x-client-secret'</span><span class="p">:</span> <span class="s">'my_api_secret'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="s">""</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.cyphme.com/api/v1/business/getAccessToken"</span>
+     -H <span class="s2">"x-client-id: my_api_key"</span>
+     -H <span class="s2">"x-client-secret: my_api_secret"</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.cyphme.com/api/v1/business/getAccessToken"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="kc">null</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"x-client-id"</span><span class="o">,</span> <span class="s">"my_api_key"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"x-client-secret"</span><span class="o">,</span> <span class="s">"my_api_secret"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"User-Agent"</span><span class="o">,</span> <span class="s">"PostmanRuntime/7.15.2"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"*/*"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Host"</span><span class="o">,</span> <span class="s">"localhost:9090"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Cookie"</span><span class="o">,</span> <span class="s">"JSESSIONID=ABAFC73231BB05EAB247F69FXXXXXXXX"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Accept-Encoding"</span><span class="o">,</span> <span class="s">"gzip, deflate"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Length"</span><span class="o">,</span> <span class="s">""</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Connection"</span><span class="o">,</span> <span class="s">"keep-alive"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>my_api_key</code> and <code>my_api_secret</code> with your API key and secret.</p>
+
+<p>On success, the above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c8e744eac7f44e6a1462bfXXXXXXXX"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1564242383612"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Error responses have JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid client id or secret"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid IP address"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint returns an Access Token to be used for all other API requests. In order to request an Access Token, you must include in this request your API key and secret in two headers that look like this:</p>
+
+<p><code>x-client-id: my_api_key</code></p>
+
+<p><code>x-client-secret: my_api_secret</code></p>
+
+<aside class="notice">
+You must replace <code>my_api_key</code> and <code>my_api_secret</code> with your valid API key and secret.
+</aside>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.cyphme.com/api/v1/business/getAccessToken</code></p>
+<h3 id='response-parameters'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accessToken</td>
+<td>The access token to use in all other API requests. Once expired, it needs to be renewed.</td>
+</tr>
+<tr>
+<td>expirationDate</td>
+<td>Expiration date of the returned access token.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+The <code>expirationDate</code> parameter is represented as a time-from-epoch timestamp in UTC.
+</aside>
+<h1 id='users'>Users</h1><h2 id='get-end-user-account-info'>Get End User Account Info</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.cyphme.com/api/v1/business/user/get"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'5c8e744eac7f44e6a1462bfXXXXXXXX'</span>
+<span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'username'</span><span class="p">:</span> <span class="s">'user@business.com'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.cyphme.com/api/v1/business/user/get"</span>
+     -H <span class="s2">"x-access-token: 5c8e744eac7f44e6a1462bfXXXXXXXX"</span>
+     -d <span class="s1">'{
+           "username": "user@business.com"
+     }'</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+
+<span class="n">JSONObject</span> <span class="n">jsonObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+<span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"username"</span><span class="o">,</span> <span class="s">"user@business.com"</span><span class="o">);</span>
+
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="n">jsonObject</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.cyphme.com/api/v1/business/user/get"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"x-access-token"</span><span class="o">,</span> <span class="s">"5c8e744eac7f44e6a1462bfXXXXXXXX"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre>
+<blockquote>
+<p>On success, the above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3891926237655860884"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"businessId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8871918765655860884"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PENDING"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@business.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Error responses have JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid access token"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid IP address"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"404"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User not found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint returns the end-user Cyphlens account information, including the account status.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://api.cyphme.com/api/v1/business/user/get</code></p>
+<h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the Cyphlens user account requesting information for.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-2'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>A unique user ID associated to the Cyphlens end-user account.</td>
+</tr>
+<tr>
+<td>businessId</td>
+<td>The business ID associated with the Cyphlens end-user account.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>The current status of the end-user Cyphlens account.</td>
+</tr>
+<tr>
+<td>username</td>
+<td>The username associated with the Cyphlens end-user account.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameter-status'>Response Parameter <code>status</code></h3>
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PENDING</td>
+<td>The end-user has not yet completed the Cyphlens account activation process. End-user action is pending.</td>
+</tr>
+<tr>
+<td>ACTIVE</td>
+<td>The end-user has an active Cyphlens account and can use all of Cyphlens services.</td>
+</tr>
+<tr>
+<td>INACTIVE</td>
+<td>The Cyphlens account is inactive for this end-user.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Remember — Cyphelens images can be generated only for ACTIVE users!
+</aside>
+<h2 id='enable-end-user'>Enable End User</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.cyphme.com/api/v1/business/user/add"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'5c8e744eac7f44e6a1462bfXXXXXXXX'</span>
+<span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'username'</span><span class="p">:</span> <span class="s">'user@business.com'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.cyphme.com/api/v1/business/user/add"</span>
+     -H <span class="s2">"x-access-token: 5c8e744eac7f44e6a1462bfXXXXXXXX"</span>
+     -d <span class="s1">'{
+           "username": "user@business.com"
+     }'</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+
+<span class="n">JSONObject</span> <span class="n">jsonObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+<span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"username"</span><span class="o">,</span> <span class="s">"user@business.com"</span><span class="o">);</span>
+
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="n">jsonObject</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.cyphme.com/api/v1/business/user/add"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"x-access-token"</span><span class="o">,</span> <span class="s">"5c8e744eac7f44e6a1462bfXXXXXXXX"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre>
+<blockquote>
+<p>On success, the above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3891926237655860884"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"businessId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8871918765655860884"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PENDING"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@business.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Error responses have JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid access token"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid IP address"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint enables Cyphlens services for an end-user.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://api.cyphme.com/api/v1/business/user/add</code></p>
+<h3 id='request-parameters-2'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the Cyphlens user account to enable.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-3'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>A unique user ID for this Cyphlens user.</td>
+</tr>
+<tr>
+<td>businessId</td>
+<td>The business ID of your business as assigned to you by Cyphlens.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>The current status of the end-user Cyphlens account.</td>
+</tr>
+<tr>
+<td>username</td>
+<td>The username of the Cyphlens user account to enable.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameter-status-2'>Response Parameter <code>status</code></h3>
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PENDING</td>
+<td>The end-user has not yet completed the Cyphlens account activation process. End-user action is pending.</td>
+</tr>
+<tr>
+<td>ACTIVE</td>
+<td>The end-user has an active Cyphlens account and can use all of Cyphlens services.</td>
+</tr>
+<tr>
+<td>INACTIVE</td>
+<td>The Cyphlens account is inactive for this end-user.</td>
+</tr>
+</tbody></table>
+<h2 id='delete-end-user'>Delete End User</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.cyphme.com/api/v1/business/user/delete"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'5c8e744eac7f44e6a1462bfXXXXXXXX'</span>
+<span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'username'</span><span class="p">:</span> <span class="s">'user@business.com'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.cyphme.com/api/v1/business/user/delete"</span>
+     -H <span class="s1">'x-access-token: 5c8e744eac7f44e6a1462bfXXXXXXXX'</span>
+     -d <span class="s1">'{
+           "username": "user@business.com"
+     }'</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+
+<span class="n">JSONObject</span> <span class="n">jsonObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+<span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"username"</span><span class="o">,</span> <span class="s">"user@business.com"</span><span class="o">);</span>
+
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="n">jsonObject</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.cyphme.com/api/v1/business/user/delete"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"x-access-token"</span><span class="o">,</span> <span class="s">"5c8e744eac7f44e6a1462bfXXXXXXXX"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre>
+<blockquote>
+<p>On success, the above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3891926237655860884"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"businessId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8871918765655860884"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INACTIVE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@business.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Error responses have JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid access token"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid IP address"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"404"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User not found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint disables a specific end-user&#39;s Cyphlens account.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://api.cyphme.com/api/v1/business/user/delete</code></p>
+<h3 id='request-parameters-3'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the Cyphlens user account to disable.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-4'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>A unique user ID for this Cyphlens user.</td>
+</tr>
+<tr>
+<td>businessId</td>
+<td>The business ID of your business as assigned to you by Cyphlens.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>The current status of the end-user Cyphlens account.</td>
+</tr>
+<tr>
+<td>username</td>
+<td>The username of the Cyphlens end-user account to disable.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameter-status-3'>Response Parameter <code>status</code></h3>
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PENDING</td>
+<td>The end-user has not yet completed the Cyphlens account activation process. End-user action is pending.</td>
+</tr>
+<tr>
+<td>ACTIVE</td>
+<td>The end-user has an active Cyphlens account and can use all of Cyphlens services.</td>
+</tr>
+<tr>
+<td>INACTIVE</td>
+<td>The Cyphlens account is inactive for this end-user.</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">Once an end-user account is disabled the user won't be able to use any of Cyphlens services, including 2FA, for that business.</aside>
+<h1 id='cyphlens-images'>Cyphlens Images</h1><h2 id='display-a-cyphlens-image'>Display a Cyphlens Image</h2>
+<blockquote>
+<p>Example of how to include a Cyphlens Image in a webpage.</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+    <span class="p">...</span>
+    <span class="c1">// Cyphlens Backend API Callback Fragment</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">imageType</span> <span class="o">===</span> <span class="s1">'SVG'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$scope</span><span class="p">.</span><span class="nx">imageURL</span> <span class="o">=</span> <span class="s1">'data:image/svg+xml;base64,'</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">image</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">$scope</span><span class="p">.</span><span class="nx">imageURL</span> <span class="o">=</span> <span class="s1">'data:image/png+xml;base64,'</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">image</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">sessionId</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">sessionId</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span>
+
+<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+    <span class="p">...</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"form_wrapper"</span><span class="o">&gt;</span>
+            <span class="p">...</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"cyphlens-image"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"svg"</span> <span class="nx">height</span><span class="o">=</span><span class="s2">"210px"</span> <span class="nx">ng</span><span class="o">-</span><span class="nx">src</span><span class="o">=</span><span class="s2">"{{imageURL}}"</span><span class="o">/&gt;</span>
+            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="p">...</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">...</span>
+<span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span></code></pre>
+<p>The sample code displayed to the right can be used to include a Cyphlens Image in a webpage as shown in the screenshot below.</p>
+
+<p><img src="./images/cyphlens_demo.png"></p>
+<h2 id='get-a-login-cyphlens-image'>Get a Login Cyphlens Image</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.cyphme.com/api/v1/business/login/getCyph"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'x-auth-token'</span><span class="p">:</span> <span class="s">'5c8e744eac7f44e6a1462bfXXXXXXXX'</span>
+<span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'username'</span><span class="p">:</span> <span class="s">'user@business.com'</span><span class="p">,</span>
+  <span class="s">'imageType'</span><span class="p">:</span> <span class="s">'SVG'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.cyphme.com/api/v1/business/login/getCyph"</span>
+     -H <span class="s2">"x-access-token: 5c8e744eac7f44e6a1462bfXXXXXXXX"</span>
+     -d <span class="s1">'{
+           "username": "user@business.com",
+           "imageType": "SVG"
+     }'</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+
+<span class="n">JSONObject</span> <span class="n">jsonObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+<span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"username"</span><span class="o">,</span> <span class="s">"user@business.com"</span><span class="o">);</span>
+<span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"imageType"</span><span class="o">,</span> <span class="s">"SVG"</span><span class="o">);</span>
+
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="n">jsonObject</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.cyphme.com/api/v1/business/login/getCyph"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"x-auth-token"</span><span class="o">,</span> <span class="s">"5c8e744eac7f44e6a1462bfXXXXXXXX"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre>
+<blockquote>
+<p>On success, the above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@business.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"imageType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SVG"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PHN2ZyBiYXNlUHJvZmlsZT0idGlu..."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xcRTH3567%thASFDASvcQW"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Error responses have JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid imageType"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid access token"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid IP address"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"404"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User not found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint generates a login Cyphlens Image for a specific end-user.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST https://api.cyphme.com/api/v1/business/login/getCyph</code></p>
+<h3 id='request-parameters-4'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The end-user for whom a login Cyphlens Image is being requested.</td>
+</tr>
+<tr>
+<td>imageType</td>
+<td>The image format the Cyphlens Image should be returned as.</td>
+</tr>
+</tbody></table>
+<h3 id='request-parameter-imagetype'>Request Parameter <code>imageType</code></h3>
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SVG</td>
+<td>Returns a base64 encoded SVG image.</td>
+</tr>
+<tr>
+<td>SVG_DECODED</td>
+<td>Returns a raw SVG image.</td>
+</tr>
+<tr>
+<td>PNG</td>
+<td>Returns a base64 encoded PNG image.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-5'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the Cyphlens end-user account for which a login Cyphlens Image has been requested.</td>
+</tr>
+<tr>
+<td>imageType</td>
+<td>The image format of the returned Cyphlens Image.</td>
+</tr>
+<tr>
+<td>image</td>
+<td>The actual login Cyphlens Image encoded as per <code>imageType</code> parameter.</td>
+</tr>
+<tr>
+<td>sessionId</td>
+<td>The end-user session ID associated with this login Cyphlens Image and passcode.</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">It is strongly recommended to use base64 encoded images. In particular, for web applications, it is recommended to use <code>SVG</code> as image type.</aside>
+<h2 id='verify-a-login-cyphlens-image'>Verify a Login Cyphlens Image</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.cyphme.com/api/v1/business/login/verifyCyph"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'x-access-token'</span><span class="p">:</span> <span class="s">'5c8e744eac7f44e6a1462bfXXXXXXXX'</span>
+<span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'username'</span><span class="p">:</span> <span class="s">'user@business.com'</span><span class="p">,</span>
+  <span class="s">'passcode'</span><span class="p">:</span> <span class="s">'401399'</span><span class="p">,</span>
+  <span class="s">'sessionId'</span><span class="p">:</span> <span class="s">'</span><span class="err">\</span><span class="s">xcRTH3567</span><span class="si">%</span><span class="s">thASFDASvcQW'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.cyphme.com/api/v1/business/login/verifyCyph"</span>
+     -H <span class="s1">'x-access-token: 5c8e744eac7f44e6a1462bfXXXXXXXX'</span>
+     -d <span class="s1">'{
+           "username": "user@business.com",
+           "passcode": "401399",
+           "sessionId": "xcRTH3567%thASFDASvcQW"
+     }'</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+
+<span class="n">JSONObject</span> <span class="n">jsonObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+<span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"username"</span><span class="o">,</span> <span class="s">"user@business.com"</span><span class="o">);</span>
+<span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"passcode"</span><span class="o">,</span> <span class="s">"401399"</span><span class="o">);</span>
+<span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"sessionId"</span><span class="o">,</span> <span class="s">"xcRTH3567%thASFDASvcQW"</span><span class="o">);</span>
+
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="n">jsonObject</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.cyphme.com/api/v1/business/login/verifyCyph"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"x-access-token"</span><span class="o">,</span> <span class="s">"5c8e744eac7f44e6a1462bfXXXXXXXX"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre>
+<blockquote>
+<p>On success, the above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verification successful."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAILURE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verification failure. Passcode invalid."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Error responses have JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid passcode"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid access token"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid IP address"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"404"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User not found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint verifies the passcode of a login Cyphlens Image for a specific end-user.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST https://api.cyphme.com/api/v1/business/login/verifyCyph</code></p>
+<h3 id='request-parameters-5'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The end-user for whom a login Cyphlens Image is being verified.</td>
+</tr>
+<tr>
+<td>passcode</td>
+<td>The passcode to verify sent by the end-user.</td>
+</tr>
+<tr>
+<td>sessionId</td>
+<td>The end-user session ID associated with this login Cyphlens Image and passcode.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-6'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>The outcome of the verification request.</td>
+</tr>
+<tr>
+<td>message</td>
+<td>Some descriptive text.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameter-status-4'>Response Parameter <code>status</code></h3>
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SUCCESS</td>
+<td>The passcode provided by the end-user has been successfully verified.</td>
+</tr>
+<tr>
+<td>FAILURE</td>
+<td>The passcode provided by the end-user is wrong.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>The passcode is missing.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Either the access token or the IP address is invalid.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>End-user not found.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-transaction-cyphlens-image'>Get a Transaction Cyphlens Image</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.cyphme.com/api/v1/business/transaction/getCyph"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">'x-auth-token'</span><span class="p">:</span> <span class="s">'5c8e744eac7f44e6a1462bfXXXXXXXX'</span>
+<span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'username'</span><span class="p">:</span> <span class="s">'user@business.com'</span><span class="p">,</span>
+  <span class="s">'imageType'</span><span class="p">:</span> <span class="s">'SVG'</span><span class="p">,</span>
+  <span class="s">'transaction'</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">'date'</span><span class="p">:</span> <span class="s">'1590165956000'</span><span class="p">,</span>
+    <span class="s">'amount'</span><span class="p">:</span> <span class="s">'20000'</span><span class="p">,</span>
+    <span class="s">'from'</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">'name'</span><span class="p">:</span> <span class="s">'Joe Smith'</span><span class="p">,</span>
+      <span class="s">'wallet'</span><span class="p">:</span> <span class="s">'abcdefghilmnopqrstuvz123456789'</span><span class="p">,</span>
+      <span class="s">'currency'</span><span class="p">:</span> <span class="s">'LTC'</span>
+    <span class="p">},</span>
+    <span class="s">'to'</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">'name'</span><span class="p">:</span> <span class="s">'Jane Smith'</span><span class="p">,</span>
+      <span class="s">'wallet'</span><span class="p">:</span> <span class="s">'123456789ABCDEFGHILMNOPQRSTUVZ'</span><span class="p">,</span>
+      <span class="s">'currency'</span><span class="p">:</span> <span class="s">'BTC'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.cyphme.com/api/v1/business/transaction/getCyph"</span>
+     -H <span class="s1">'x-access-token: 5c8e744eac7f44e6a1462bfXXXXXXXX'</span>
+     -d <span class="s1">'{
+           "username": "user@business.com",
+           "imageType": "SVG",
+           "transaction": {
+             "date": "1590165956000",
+             "amount": "20000",
+             "from": {
+               "name": "Joe Smith",
+               "wallet": "abcdefghilmnopqrstuvz123456789",
+               "currency": "LTC"
+             },
+             "to": {
+               "name": "Jane Smith",
+               "wallet": "123456789ABCDEFGHILMNOPQRSTUVZ",
+               "currency": "BTC"
+             }
+           }
+     }'</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+
+<span class="n">JSONObject</span> <span class="n">jsonFrom</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+<span class="n">jsonFrom</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"Joe Smith"</span><span class="o">);</span>
+<span class="n">jsonFrom</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"wallet"</span><span class="o">,</span> <span class="s">"abcdefghilmnopqrstuvz123456789"</span><span class="o">);</span>
+<span class="n">jsonFrom</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"currency"</span><span class="o">,</span> <span class="s">"LTC"</span><span class="o">);</span>
+
+<span class="n">JSONObject</span> <span class="n">jsonTo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+<span class="n">jsonTo</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"Jane Smith"</span><span class="o">);</span>
+<span class="n">jsonTo</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"wallet"</span><span class="o">,</span> <span class="s">"123456789ABCDEFGHILMNOPQRSTUVZ"</span><span class="o">);</span>
+<span class="n">jsonTo</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"currency"</span><span class="o">,</span> <span class="s">"BTC"</span><span class="o">);</span>
+
+<span class="n">JSONObject</span> <span class="n">jsonTransaction</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+<span class="n">jsonTransaction</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"date"</span><span class="o">,</span> <span class="s">"1590165956000"</span><span class="o">);</span>
+<span class="n">jsonTransaction</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"amount"</span><span class="o">,</span> <span class="s">"20000"</span><span class="o">);</span>
+<span class="n">jsonTransaction</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"from"</span><span class="o">,</span> <span class="n">jsonFrom</span><span class="o">);</span>
+<span class="n">jsonTransaction</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"to"</span><span class="o">,</span> <span class="n">jsonTo</span><span class="o">);</span>
+
+<span class="n">JSONObject</span> <span class="n">jsonObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+<span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"username"</span><span class="o">,</span> <span class="s">"user@business.com"</span><span class="o">);</span>
+<span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"imageType"</span><span class="o">,</span> <span class="s">"PNG"</span><span class="o">);</span>
+<span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"transaction"</span><span class="o">,</span> <span class="n">jsonTransaction</span><span class="o">);</span>
+
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="n">jsonObject</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.cyphme.com/api/v1/business/transaction/getCyph"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"x-auth-token"</span><span class="o">,</span> <span class="s">"5c8e744eac7f44e6a1462bfXXXXXXXX"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre>
+<blockquote>
+<p>On success, the above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@business.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"imageType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SVG"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PHN2ZyBiYXNlUHJvZmlsZT0idGlu..."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xcRTH3567%thASFDASvcQW"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Error responses have JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid imageType"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid transaction data"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid access token"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid IP address"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"404"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User not found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Example of a transaction JSON for Cryptocurrency:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1590165956000"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20000"</span><span class="p">,</span><span class="w"> 
+  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe Smith"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"wallet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdefghilmnopqrstuvz123456789"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LTC"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> 
+  </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Smith"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"wallet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789ABCDEFGHILMNOPQRSTUVZ"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Example of a transaction JSON for Fiat currency:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1590165956000"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20000"</span><span class="p">,</span><span class="w"> 
+  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe Smith"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62136016"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"iban"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB32ESSE40486562136016"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> 
+  </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Smith"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400162854"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"iban"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IT68D0300203280000400162854"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint generates a transaction Cyphlens Image for a specific end-user.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST https://api.cyphme.com/api/v1/business/transaction/getCyph</code></p>
+<h3 id='request-parameters-6'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The end-user for whom a transaction Cyphlens Image is being requested.</td>
+</tr>
+<tr>
+<td>imageType</td>
+<td>The image format the Cyphlens Image should be returned as.</td>
+</tr>
+<tr>
+<td>transaction</td>
+<td>The details of the transaction to be verified.</td>
+</tr>
+</tbody></table>
+<h3 id='request-parameter-transaction'>Request Parameter <code>transaction</code></h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date</td>
+<td>Date of the transaction.</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Amount of the transaction (e.g., 200).</td>
+</tr>
+<tr>
+<td>from</td>
+<td>Sender&#39;s details.</td>
+</tr>
+<tr>
+<td>to</td>
+<td>Recepient&#39;s details.</td>
+</tr>
+</tbody></table>
+<h3 id='request-parameter-from-for-cryptocurrency'>Request Parameter <code>from</code> for Cryptocurrency</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Sender&#39;s full name.</td>
+</tr>
+<tr>
+<td>wallet</td>
+<td>Sender&#39;s wallet address.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>Currency in which the specified amount is sent.</td>
+</tr>
+</tbody></table>
+<h3 id='request-parameter-to-for-cryptocurrency'>Request Parameter <code>to</code> for Cryptocurrency</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Recipient&#39;s full name.</td>
+</tr>
+<tr>
+<td>wallet</td>
+<td>Recipient&#39;s wallet address.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>Currency in which the specified amount is received.</td>
+</tr>
+</tbody></table>
+<h3 id='request-parameter-from-for-fiat-currency'>Request Parameter <code>from</code> for Fiat Currency</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Sender&#39;s full name.</td>
+</tr>
+<tr>
+<td>account</td>
+<td>Sender&#39;s bank account number.</td>
+</tr>
+<tr>
+<td>iban</td>
+<td>Sender&#39;s IBAN number.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>Currency in which the specified amount is sent.</td>
+</tr>
+</tbody></table>
+<h3 id='request-parameter-to-for-fiat-currency'>Request Parameter <code>to</code> for Fiat Currency</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Recepient&#39;s full name.</td>
+</tr>
+<tr>
+<td>account</td>
+<td>Recepient&#39;s bank account number.</td>
+</tr>
+<tr>
+<td>iban</td>
+<td>Recepient&#39;s IBAN number.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>Currency in which the specified amount is received.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-7'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username of the Cyphlens end-user account for which a transaction Cyphlens Image has been requested.</td>
+</tr>
+<tr>
+<td>imageType</td>
+<td>The image format of the returned Cyphlens Image.</td>
+</tr>
+<tr>
+<td>image</td>
+<td>The actual transaction Cyphlens Image encoded as per <code>imageType</code> parameter.</td>
+</tr>
+<tr>
+<td>sessionId</td>
+<td>The end-user session ID associated with this transaction Cyphlens Image and passcode.</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-imagetype'>Parameter <code>imageType</code></h3>
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SVG</td>
+<td>Returns a base64 encoded SVG image.</td>
+</tr>
+<tr>
+<td>SVG_DECODED</td>
+<td>Returns a raw SVG image.</td>
+</tr>
+<tr>
+<td>PNG</td>
+<td>Returns a base64 encoded PNG image.</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">It is strongly recommended to use base64 encoded images. In particular, for web applications, it is recommended to use <code>SVG</code> as image type.</aside>
+<h2 id='verify-a-transaction-cyphlens-image'>Verify a Transaction Cyphlens Image</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.cyphme.com/api/v1/business/transaction/verifyCyph"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'x-auth-token'</span><span class="p">:</span> <span class="s">'5c8e744eac7f44e6a1462bfXXXXXXXX'</span>
+<span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'username'</span><span class="p">:</span> <span class="s">'user@business.com'</span><span class="p">,</span>
+  <span class="s">'passcode'</span><span class="p">:</span> <span class="s">'401399'</span><span class="p">,</span>
+  <span class="s">'sessionId'</span><span class="p">:</span> <span class="s">'xcRTH3567</span><span class="si">%</span><span class="s">thASFDASvcQW'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.cyphme.com/api/v1/business/transaction/verifyCyph"</span>
+     -H <span class="s1">'x-access-token: 5c8e744eac7f44e6a1462bfXXXXXXXX'</span>
+     -d <span class="s1">'{
+           "username": "user@business.com",
+           "passcode": "401399",
+           "sessionId": "xcRTH3567%thASFDASvcQW"
+}'</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">();</span>
+
+<span class="n">MediaType</span> <span class="n">mediaType</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"application/json"</span><span class="o">);</span>
+
+<span class="n">JSONObject</span> <span class="n">jsonObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+<span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"username"</span><span class="o">,</span> <span class="s">"user@business.com"</span><span class="o">);</span>
+<span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"passcode"</span><span class="o">,</span> <span class="s">"401399"</span><span class="o">);</span>
+<span class="n">jsonObject</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"sessionId"</span><span class="o">,</span> <span class="s">"xcRTH3567%thASFDASvcQW"</span><span class="o">);</span>
+
+<span class="n">RequestBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">mediaType</span><span class="o">,</span> <span class="n">jsonObject</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="s">"https://api.cyphme.com/api/v1/business/transaction/verifyCyph"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">body</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"x-auth-token"</span><span class="o">,</span> <span class="s">"5c8e744eac7f44e6a1462bfXXXXXXXX"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">newCall</span><span class="o">(</span><span class="n">request</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</code></pre>
+<blockquote>
+<p>On success, the above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verification successful."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAILURE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verification failure. Passcode invalid."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Error responses have JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid passcode"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid access token"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"401"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid IP address"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"404"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User not found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint verifies the passcode of a transaction Cyphlens Image for a specific end-user.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>POST https://api.cyphme.com/api/v1/business/transaction/verifyCyph</code></p>
+<h3 id='request-parameters-7'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The end-user for whom a transaction Cyphlens Image is being verified.</td>
+</tr>
+<tr>
+<td>passcode</td>
+<td>The passcode to verify sent by the end-user.</td>
+</tr>
+<tr>
+<td>sessionId</td>
+<td>The end-user session ID associated with this transaction Cyphlens Image and passcode.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-8'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>The outcome of the passcode verification request.</td>
+</tr>
+<tr>
+<td>message</td>
+<td>Some descriptive text.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameter-status-5'>Response Parameter <code>status</code></h3>
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SUCCESS</td>
+<td>The passcode provided by the end-user has been successfully verified.</td>
+</tr>
+<tr>
+<td>FAILURE</td>
+<td>The passcode provided by the end-user is wrong.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>The passcode is missing.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Either the access token or the IP address is invalid.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>End-user not found.</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<p>The Cyphlens API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request has some invalid or missing data.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Either your API key is wrong, your access token is wrong or your IP address is invalid.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified end-user could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access the Cyphlens API with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re sending too many requests! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="python">python</a>
+                <a href="#" data-language-name="java">java</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
