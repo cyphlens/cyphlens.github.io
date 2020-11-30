@@ -305,6 +305,12 @@ a {
   padding: 40px 130px;
 }
 
+.dummy {
+  width: 100%;
+  background-color: #1D1D1D; 
+  min-height: 500px;
+}
+
 .section_dark {
   display: block;
   padding-left: 60px; 
