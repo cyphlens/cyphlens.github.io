@@ -136,14 +136,14 @@ function handleForm(){
 		$.post( post_url, form_data, function( response ) {
 			$("#email").val( "" );
 			$("#description").val( "" );
-			$("#form_result").html( "Sent. Thank you!" );
+			$("#form_result").html( '<i class="fas fa-check-circle fa-fw" style="color: #779A61;"></i>&nbsp;Sent. Thank you!' );
 			$("#send_btn").html("Send");
 			$("#send_btn").prop("disabled", false);
 			$("#send_btn").css("background-color", "#1D1D1D");
 		}).fail(function(){
 			$("#email").val( "" );
 			$("#description").val( "" );
-			$("#form_result").html( "Error. Please try again." );
+			$("#form_result").html( '<i class="fas fa-exclamation-circle fa-fw" style="color: #AE595B;"></i>&nbsp;Error. Please try again.' );
 			$("#send_btn").html("Send");
 			$("#send_btn").prop("disabled", false);
 			$("#send_btn").css("background-color", "#1D1D1D");
@@ -162,14 +162,14 @@ function handleBottomForm(){
 		$.post( post_url, form_data, function( response ) {
 			$("#bemail").val( "" );
 			$("#bdescription").val( "" );
-			$("#bform_result").html( "Sent. Thank you!" );
+			$("#bform_result").html( '<i class="fas fa-check-circle fa-fw" style="color: #779A61;"></i>&nbsp;Sent. Thank you!' );
 			$("#bsend_btn").html("Send");
 			$("#bsend_btn").prop("disabled", false);
 			$("#bsend_btn").css("background-color", "#1D1D1D");
 		}).fail(function(){
 			$("#bemail").val( "" );
 			$("#bdescription").val( "" );
-			$("#bform_result").html( "Error. Please try again." );
+			$("#bform_result").html( '<i class="fas fa-exclamation-circle fa-fw" style="color: #AE595B;"></i>&nbsp;Error. Please try again.' );
 			$("#bsend_btn").html("Send");
 			$("#bsend_btn").prop("disabled", false);
 			$("#bsend_btn").css("background-color", "#1D1D1D");
