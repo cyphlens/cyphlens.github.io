@@ -29,11 +29,13 @@ function loadHomepage(){
 			$('#personal').trigger("click");
 		});
 		$('#nav_btntrial,#btntrial').click(function(){
+			$("#bform_result").html( "&nbsp;" );
 			$('#b_form_title').text("Request Trial");
 			$('input[name="name"]').val("trial");
 			$('#b_form').slideDown();
 		});
 		$('#nav_btnsales').click(function(){
+			$("#bform_result").html( "&nbsp;" );
 			$('#b_form_title').text("Sales Question");
 			$('input[name="name"]').val("sales");
 			$('#b_form').slideDown();
@@ -69,11 +71,13 @@ function goAboutEvent(){
 			$('#aboutnav').addClass("active");
 			$('#content').load('contacts.html', function(){
 				$('#sales_link').click(function(){
+					$("#bform_result").html( "&nbsp;" );
 					$('#b_form_title').text("Sales Question");
 					$('input[name="name"]').val("sales");
 					$('#b_form').slideDown();
 				});
 				$('#support_link').click(function(){
+					$("#bform_result").html( "&nbsp;" );
 					$('#b_form_title').text("Report A Problem");
 					$('input[name="name"]').val("support");
 					$('#b_form').slideDown();
