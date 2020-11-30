@@ -43,7 +43,7 @@ function loadHomepage(){
 		handleAccordion();
 		handleBottomForm();
 		window.scrollTo(0,0);
-	});
+	}).hide().fadeIn();
 }
 
 function unselectEntry(){
@@ -84,7 +84,7 @@ function goAboutEvent(){
 				});
 				handleForm();
 				window.scrollTo(0,0);
-			});
+			}).hide().fadeIn();
 		}
 	});
 }
@@ -97,7 +97,7 @@ function goPartialEncEvent(){
 		$('#pencrypt').addClass("activ");
 		$('#content').load('partial_encryption.html', function(){
 			window.scrollTo(0,0);
-		});
+		}).hide().fadeIn();
 	});
 }
 
@@ -109,7 +109,7 @@ function goMutual2faEvent(){
 		$('#m2fa').addClass("activ");
 		$('#content').load('mutual2fa.html', function(){
 			window.scrollTo(0,0);
-		});
+		}).hide().fadeIn();
 	});
 }
 
@@ -121,7 +121,7 @@ function goPersonalEvent(){
 		$('#personal').addClass("activ");
 		$('#content').load('personal_security.html', function(){
 			window.scrollTo(0,0);
-		});
+		}).hide().fadeIn();
 	});
 }
 
