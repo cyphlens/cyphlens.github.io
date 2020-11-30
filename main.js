@@ -67,7 +67,7 @@ function goAboutEvent(){
 		let isCurrent = $('#aboutnav').hasClass("active");
 		if (!isCurrent){
 			unselectEntry();
-			document.title = "Cyphlens | About";
+			document.title = "Cyphlens | Contacts";
 			$('#aboutnav').addClass("active");
 			$('#content').load('contacts.html', function(){
 				$('#sales_link').click(function(){
@@ -134,11 +134,15 @@ function handleForm(){
 		var post_url = $(this).attr("action"); //get form action url
 		var form_data = $(this).serialize(); //Encode form elements for submission
 		$.post( post_url, form_data, function( response ) {
+			$("#email").val( "" );
+			$("#description").val( "" );
 			$("#form_result").html( "Sent. Thank you!" );
 			$("#send_btn").html("Send");
 			$("#send_btn").prop("disabled", false);
 			$("#send_btn").css("background-color", "#1D1D1D");
 		}).fail(function(){
+			$("#email").val( "" );
+			$("#description").val( "" );
 			$("#form_result").html( "Error. Please try again." );
 			$("#send_btn").html("Send");
 			$("#send_btn").prop("disabled", false);
@@ -156,11 +160,15 @@ function handleBottomForm(){
 		var post_url = $(this).attr("action"); //get form action url
 		var form_data = $(this).serialize(); //Encode form elements for submission
 		$.post( post_url, form_data, function( response ) {
+			$("#bemail").val( "" );
+			$("#bdescription").val( "" );
 			$("#bform_result").html( "Sent. Thank you!" );
 			$("#bsend_btn").html("Send");
 			$("#bsend_btn").prop("disabled", false);
 			$("#bsend_btn").css("background-color", "#1D1D1D");
 		}).fail(function(){
+			$("#bemail").val( "" );
+			$("#bdescription").val( "" );
 			$("#bform_result").html( "Error. Please try again." );
 			$("#bsend_btn").html("Send");
 			$("#bsend_btn").prop("disabled", false);
