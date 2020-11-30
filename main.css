@@ -462,6 +462,7 @@ div.card {
   width: 380px;
   background-color: #FFFFFF;
   padding: 10px 20px;
+  margin-bottom: 6px;
 }
 
 div.grow {
