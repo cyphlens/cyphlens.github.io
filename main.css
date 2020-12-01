@@ -74,6 +74,7 @@ body {
 .topnav a.active {
   color: white;
   border-bottom: 2px solid #FFFFFF;
+  outline: none;
 }
 
 .topnav img {
@@ -166,6 +167,7 @@ body {
 .topnav div.active {
   color: white;
   border-bottom: 2px solid #FFFFFF;
+  outline: none;
 }
 
 .dropdown a {
