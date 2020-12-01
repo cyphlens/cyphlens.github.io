@@ -8,8 +8,8 @@ $(document).ready(function(){
 			case '/contacts.html':
 				$('#aboutnav').trigger('click');
 				break;
-			case '/partial_encryption':
-			case '/partial_encryption.html':
+			case '/data_security':
+			case '/data_security.html':
 				$('#pencrypt').trigger('click');
 				break;
 			case '/mutual2fa':
@@ -138,10 +138,10 @@ function goAboutEvent(){
 function goPartialEncEvent(){
 	$('#pencrypt').click(function() {
 		unselectEntry();
-		document.title = "Cyphlens | Partial Encryption";
+		document.title = "Cyphlens | Data Security";
 		$('#dropdown1').addClass("active");
 		$('#pencrypt').addClass("activ");
-		$('#content').load('partial_encryption.html', function(){
+		$('#content').load('data_security.html', function(){
 			window.scrollTo(0,0);
 		}).hide().fadeIn();
 	});
