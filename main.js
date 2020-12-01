@@ -1,5 +1,41 @@
+
+$(document).ready(function(){
+	init();
+	$.address.externalChange(function(event) {
+		//alert(event.value);
+		switch (event.value) {
+			case '/contacts':
+			case '/contacts.html':
+				$('#aboutnav').trigger('click');
+				break;
+			case '/partial_encryption':
+			case '/partial_encryption.html':
+				$('#pencrypt').trigger('click');
+				break;
+			case '/mutual2fa':
+			case '/mutual2fa.html':
+				$('#m2fa').trigger('click');
+				break;
+			case '/personal_security':
+			case '/personal_security.html':
+				$('#personal').trigger('click');
+				break;
+			default:
+				$('#homenav').trigger('click');
+		}
+	});
+	// Cookies banner
+	$("#cookieButton").click(function(){
+		console.log('Understood');
+		var expire=new Date();
+		expire=new Date(expire.getTime()+7776000000);
+		document.cookie="cookieCompliancyAccepted=here; expires="+expire+";path=/";
+        $("#myCookieConsent").hide(400);
+    });
+	testFirstCookie();
+});
+
 function init(){
-	loadHomepage();
 	goHomeEvent();
 	goAboutEvent();
 	goPartialEncEvent();
@@ -27,6 +63,14 @@ function loadHomepage(){
 		});
 		$('#home_personal').click(function(){
 			$('#personal').trigger("click");
+		});
+		$('.btn_personal').click(function(event){
+			event.preventDefault();
+			$('#personal').trigger('click');
+		});
+		$('.btn_contacts').click(function(event){
+			event.preventDefault();
+			$('#aboutnav').trigger('click');
 		});
 		$('#nav_btntrial,#btntrial').click(function(){
 			$("#bform_result").html( "&nbsp;" );
@@ -70,13 +114,15 @@ function goAboutEvent(){
 			document.title = "Cyphlens | Contacts";
 			$('#aboutnav').addClass("active");
 			$('#content').load('contacts.html', function(){
-				$('#sales_link').click(function(){
+				$('#sales_link').click(function(event){
+					event.preventDefault();
 					$("#bform_result").html( "&nbsp;" );
 					$('#b_form_title').text("Sales Question");
 					$('input[name="name"]').val("sales");
 					$('#b_form').slideDown();
 				});
-				$('#support_link').click(function(){
+				$('#support_link').click(function(event){
+					event.preventDefault();
 					$("#bform_result").html( "&nbsp;" );
 					$('#b_form_title').text("Report A Problem");
 					$('input[name="name"]').val("support");
@@ -223,15 +269,5 @@ function testFirstCookie(){
 	   }		
 	//}
 }
-$(document).ready(function(){
-    $("#cookieButton").click(function(){
-		console.log('Understood');
-		var expire=new Date();
-		expire=new Date(expire.getTime()+7776000000);
-		document.cookie="cookieCompliancyAccepted=here; expires="+expire+";path=/";
-        $("#myCookieConsent").hide(400);
-    });
-	testFirstCookie();
-});
 // Cookie Compliancy END
 

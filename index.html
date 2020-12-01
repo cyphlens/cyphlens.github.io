@@ -23,21 +23,22 @@
 	<link rel="canonical" href="https://cyphlens.com">
 	<script src="https://kit.fontawesome.com/1f8343ed2a.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js?crawlable=true" integrity="sha512-Fhm8fcAQhENO1HmU1JjbnNm6ReszFIiJvkHdnuGZBznaaM6vakH4YEPO7v8M3PbGR03R/dur0QP5vZ5s4YaN7w==" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="main.js"></script>
 </head>
-<body onload="init()">
+<body>
 	<div id="topmenu" class="topnav">
-		<a id="homenav" href="#">Home</a>
+		<a id="homenav" href="/index" rel="address:/index">Home</a>
 		<div id="dropdown1" class="dropdown">
 			<a id="solnav" href="#">Solutions</a>
 			<i class="fas fa-caret-down fa-inverse" style="color: #bbb; margin-right: 18px;"></i>
 			<div class="dropdown-content">
-				<a id="pencrypt" href="#"><i class="fas fa-braille fa-fw" style="color: #45ABBF;"></i>&nbsp;&nbsp;Data Security</a>
-				<a id="m2fa" href="#"><i class="fas fa-people-arrows fa-fw" style="color: #45ABBF;"></i>&nbsp;&nbsp;Mutual 2FA</a>
-				<a id="personal" href="#"><i class="fas fa-user-shield fa-fw" style="color: #45ABBF;"></i>&nbsp;&nbsp;Personal Privacy</a>
+				<a id="pencrypt" href="/partial_encryption" rel="address:/partial_encryption"><i class="fas fa-braille fa-fw" style="color: #45ABBF;"></i>&nbsp;&nbsp;Data Security</a>
+				<a id="m2fa" href="/mutual2fa" rel="address:/mutual2fa"><i class="fas fa-people-arrows fa-fw" style="color: #45ABBF;"></i>&nbsp;&nbsp;Mutual 2FA</a>
+				<a id="personal" href="/personal_security" rel="address:/personal_security"><i class="fas fa-user-shield fa-fw" style="color: #45ABBF;"></i>&nbsp;&nbsp;Personal Privacy</a>
 			</div>
 		</div>
-		<a id="aboutnav" href="#">Contacts</a>
+		<a id="aboutnav" href="/contacts" rel="address:/contacts">Contacts</a>
 		<div id="dropdown2" class="dropdown">
 			<a id="devnav" href="#">Developers</a>
 			<i class="fas fa-cog fa-spin" style="color: #bbb; margin-right: 18px;"></i>
