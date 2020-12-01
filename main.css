@@ -537,7 +537,7 @@ div.panel {
 /*** COOKIE WARNING ***/
 
 #myCookieConsent {
-    z-index: 999;
+    z-index: 10001;
     min-height: 20px;
     font-family: OpenSans, arial, "sans-serif";
     padding: 10px 20px;
