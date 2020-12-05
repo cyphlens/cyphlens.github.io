@@ -77,6 +77,13 @@ body {
   outline: none;
 }
 
+.topnav div#nav_btn {
+  float: right; 
+  margin-left: -316px; 
+  margin-right: 80px; 
+  margin-top: -12px;
+}
+
 .topnav img {
   float: left;
   margin-left: 80px;
@@ -580,4 +587,14 @@ div.panel {
 #myCookieConsent a#cookieButton:hover {
   background: #fda016;
   color: #000;
+}
+
+/* Hide menu buttons and center logo if there is no space */
+@media screen and (max-width: 1150px) {
+  .topnav {
+    background-position: 50% 20%;
+  }
+  .topnav div#nav_btn{
+    display: none;
+  }
 }
