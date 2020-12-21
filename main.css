@@ -392,7 +392,8 @@ a {
   color: #000000; 
   width: 284px; 
   border-radius: 15px; 
-  margin-right: 42px; 
+  margin-right: 42px;
+  margin-top: 10px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8);
 }
 
