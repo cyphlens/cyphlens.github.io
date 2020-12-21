@@ -17,7 +17,7 @@ body {
 }
 
 .fixed_bg_180{
-  background-image: url("./images/background@3x.png");
+  background: url("./images/background@3x.png");
   min-height: 180px;
   background-attachment: fixed;
   background-position: center;
@@ -26,12 +26,13 @@ body {
 }
 
 .fixed_bg_100{
-  background-image: url("./images/background@3x.png");
+  background: url("./images/background@3x.png");
   min-height: 100px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: -10;
 }
 
 /* Add a black background color to the top navigation */
