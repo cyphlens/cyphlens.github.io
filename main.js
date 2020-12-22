@@ -6,22 +6,22 @@ $(document).ready(function(){
 		switch (event.value) {
 			case '/contacts':
 			case '/contacts.html':
-				$('#aboutnav').trigger('click');
-				break;
+			$('#aboutnav').trigger('click');
+			break;
 			case '/data_security':
 			case '/data_security.html':
-				$('#pencrypt').trigger('click');
-				break;
+			$('#pencrypt').trigger('click');
+			break;
 			case '/mutual2fa':
 			case '/mutual2fa.html':
-				$('#m2fa').trigger('click');
-				break;
+			$('#m2fa').trigger('click');
+			break;
 			case '/personal_security':
 			case '/personal_security.html':
-				$('#personal').trigger('click');
-				break;
+			$('#personal').trigger('click');
+			break;
 			default:
-				$('#homenav').trigger('click');
+			$('#homenav').trigger('click');
 		}
 	});
 	// Cookies banner
@@ -30,8 +30,8 @@ $(document).ready(function(){
 		var expire=new Date();
 		expire=new Date(expire.getTime()+7776000000);
 		document.cookie="cookieCompliancyAccepted=here; expires="+expire+";path=/";
-        $("#myCookieConsent").hide(400);
-    });
+		$("#myCookieConsent").hide(400);
+	});
 	testFirstCookie();
 });
 
@@ -128,6 +128,18 @@ function goAboutEvent(){
 					$('input[name="name"]').val("support");
 					$('#b_form').slideDown();
 				});
+				$('#nav_btntrial').click(function(){
+					$("#bform_result").html( "&nbsp;" );
+					$('#b_form_title').text("Request Trial");
+					$('input[name="name"]').val("trial");
+					$('#b_form').slideDown();
+				});
+				$('#nav_btnsales').click(function(){
+					$("#bform_result").html( "&nbsp;" );
+					$('#b_form_title').text("Sales Question");
+					$('input[name="name"]').val("sales");
+					$('#b_form').slideDown();
+				});
 				handleForm();
 				window.scrollTo(0,0);
 			}).hide().fadeIn();
@@ -143,6 +155,18 @@ function goPartialEncEvent(){
 		$('#pencrypt').addClass("activ");
 		$('#content').load('data_security.html', function(){
 			window.scrollTo(0,0);
+			$('#nav_btntrial').click(function(){
+				$("#bform_result").html( "&nbsp;" );
+				$('#b_form_title').text("Request Trial");
+				$('input[name="name"]').val("trial");
+				$('#b_form').slideDown();
+			});
+			$('#nav_btnsales').click(function(){
+				$("#bform_result").html( "&nbsp;" );
+				$('#b_form_title').text("Sales Question");
+				$('input[name="name"]').val("sales");
+				$('#b_form').slideDown();
+			});
 		}).hide().fadeIn();
 	});
 }
@@ -155,6 +179,18 @@ function goMutual2faEvent(){
 		$('#m2fa').addClass("activ");
 		$('#content').load('mutual2fa.html', function(){
 			window.scrollTo(0,0);
+			$('#nav_btntrial').click(function(){
+				$("#bform_result").html( "&nbsp;" );
+				$('#b_form_title').text("Request Trial");
+				$('input[name="name"]').val("trial");
+				$('#b_form').slideDown();
+			});
+			$('#nav_btnsales').click(function(){
+				$("#bform_result").html( "&nbsp;" );
+				$('#b_form_title').text("Sales Question");
+				$('input[name="name"]').val("sales");
+				$('#b_form').slideDown();
+			});
 		}).hide().fadeIn();
 	});
 }
@@ -167,6 +203,18 @@ function goPersonalEvent(){
 		$('#personal').addClass("activ");
 		$('#content').load('personal_security.html', function(){
 			window.scrollTo(0,0);
+			$('#nav_btntrial').click(function(){
+				$("#bform_result").html( "&nbsp;" );
+				$('#b_form_title').text("Request Trial");
+				$('input[name="name"]').val("trial");
+				$('#b_form').slideDown();
+			});
+			$('#nav_btnsales').click(function(){
+				$("#bform_result").html( "&nbsp;" );
+				$('#b_form_title').text("Sales Question");
+				$('input[name="name"]').val("sales");
+				$('#b_form').slideDown();
+			});
 		}).hide().fadeIn();
 	});
 }
@@ -245,18 +293,18 @@ function handleAccordion(){
 
 // Cookie Compliancy BEGIN
 function GetCookie(name) {
-  var arg=name+"=";
-  var alen=arg.length;
-  var clen=document.cookie.length;
-  var i=0;
-  while (i<clen) {
-	var j=i+alen;
-	if (document.cookie.substring(i,j)==arg)
-	  return "here";
-	i=document.cookie.indexOf(" ",i)+1;
-	if (i==0) break;
-  }
-  return null;
+	var arg=name+"=";
+	var alen=arg.length;
+	var clen=document.cookie.length;
+	var i=0;
+	while (i<clen) {
+		var j=i+alen;
+		if (document.cookie.substring(i,j)==arg)
+			return "here";
+		i=document.cookie.indexOf(" ",i)+1;
+		if (i==0) break;
+	}
+	return null;
 }
 function testFirstCookie(){
 	var offset = new Date().getTimezoneOffset();
@@ -264,9 +312,9 @@ function testFirstCookie(){
 		var visit=GetCookie("cookieCompliancyAccepted");
 		if (visit==null){
 		   $("#myCookieConsent").fadeIn(400);	// Show warning
-	   } else {
+		} else {
 			// Already accepted
-	   }		
+		}		
 	//}
 }
 // Cookie Compliancy END
