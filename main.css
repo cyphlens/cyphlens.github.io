@@ -397,6 +397,11 @@ a {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8);
 }
 
+.card_box img{
+  margin-top: 44px;
+  margin-bottom: -34px;
+}
+
 .form {
   width: 530px;
   padding: 16px 20px;
