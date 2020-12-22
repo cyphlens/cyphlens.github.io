@@ -402,6 +402,12 @@ a {
   margin-bottom: -34px;
 }
 
+.divider{
+  position: relative;
+  display: inline-block;
+  width: 6%;
+}
+
 .form {
   width: 530px;
   padding: 16px 20px;
