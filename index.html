@@ -43,6 +43,10 @@
 			padding-right: 5px !important;
 		}
 
+		p.glow{
+			animation: glow 1s ease-in-out infinite alternate;
+		}
+
 		.footer{
 			position: absolute;
 			bottom: 0;
@@ -102,12 +106,22 @@
   			66%, 93% {transform: translateY(-25%);}
   			100% {transform: translateY(0%);}
 		}
+
+		@keyframes glow {
+  			from {
+    			text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #737373, 0 0 3px #737373, 0 0 3px #737373, 0 0 3px #737373, 0 0 3px #737373;
+  			}
+  
+  			to {
+    			text-shadow: 0 0 3px #fff, 0 0 3px #4d4d4d, 0 0 3px #4d4d4d, 0 0 3px #4d4d4d, 0 0 3px #4d4d4d, 0 0 3px #4d4d4d, 0 0 3px #4d4d4d;
+  			}
+		}
 	</style>
 </head>
 <body>
 	<div id="wrapper">
 		<img src="images/new_logo_white_comfortaa.png"/>
-		<p class="thin">Private Beta Only.</p>
+		<a href="https://dashboard.cyphme.com"><p class="thin">Private Beta Only</p></a>
 		<div class="ms-slider">
       		<ul class="ms-slider__words">
         		<li class="ms-slider__word">Beyond Login</li>
