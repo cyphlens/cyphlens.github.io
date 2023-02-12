@@ -4,13 +4,13 @@
 	<title>Cyphlens</title>
 	<style type="text/css">
 		html, body{
-			-webkit-font-smoothing: antialiased;
-  			-moz-osx-font-smoothing: grayscale;
 			height: 100%;
 			margin: 0;
 			font-family: "Roboto", sans-serif;
 			font-size: 24px;
 			color: whitesmoke;
+			-webkit-font-smoothing: antialiased;
+  			-moz-osx-font-smoothing: grayscale;
 		}
 		html{
 			background: url(images/background@3x.png) no-repeat center center fixed; 
@@ -108,13 +108,17 @@
   			100% {transform: translateY(0%);}
 		}
 
-		@media only screen and (max-width: 660px) {
+		@media only screen and (max-width: 660px) and (orientation: landscape) {
+			html, body{ font-size: 24px; }
+			img { width: 300px; }
   			.ms-slider, .ms-slider__words {
     			font-size: 24px;
   			}
 		}
 
-		@media only screen and (max-width: 490px) {
+		@media only screen and (max-width: 490px) and (orientation: landscape) {
+			html, body{ font-size: 24px; }
+			img { width: 300px; }
   			.ms-slider, .ms-slider__words {
     			font-size: 20px;
   			}
@@ -123,7 +127,9 @@
   			}
 		}
 
-		@media only screen and (max-width: 410px) {
+		@media only screen and (max-width: 410px) and (orientation: landscape) {
+			html, body{ font-size: 24px; }
+			img { width: 300px; }
   			.ms-slider, .ms-slider__words {
     			font-size: 18px;
   			}
@@ -132,8 +138,8 @@
   			}
 		}
 
-		@media only screen and (max-width: 368px) {
-			html body { font-size:20px; }
+		@media only screen and (max-width: 368px) and (orientation: landscape) {
+			html body { font-size: 20px; }
 			img { width: 240px; }
   			.ms-slider, .ms-slider__words {
     			font-size: 16px;
@@ -143,8 +149,8 @@
   			}
 		}
 	
-		@media only screen and (max-width: 330px) {
-			html body { font-size:20px; }
+		@media only screen and (max-width: 330px) and (orientation: landscape) {
+			html body { font-size: 20px; }
 			img { width: 240px; }
   			.ms-slider, .ms-slider__words {
     			font-size: 14px;
@@ -154,8 +160,8 @@
   			}
 		}
 
-		@media only screen and (max-width: 290px) {
-			html body { font-size:20px; }
+		@media only screen and (max-width: 290px) and (orientation: landscape) {
+			html body { font-size: 20px; }
 			img { width: 200px; }
   			.ms-slider, .ms-slider__words {
     			font-size: 12px;
