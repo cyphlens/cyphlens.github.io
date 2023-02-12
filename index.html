@@ -60,7 +60,7 @@
 
 		.ms-slider {
   			display: inline-block;
-  			height: 2em;
+  			height: 56px;  /* 2em */
   			overflow: hidden;
   			vertical-align: middle;
   			font-family: 'Roboto Condensed', sans-serif;
@@ -84,7 +84,7 @@
   
   		.ms-slider__word {
     			display: block;
-    			line-height: 1.8em;
+    			line-height: 48px; /* 1.8em */
     			text-align: center;
 		}
 
@@ -108,7 +108,15 @@
   			100% {transform: translateY(0%);}
 		}
 
-		@media only screen and (max-width: 660px) and (orientation: landscape) {
+		@media only screen and (max-width: 660px) {
+			html, body{ font-size: 24px; }
+			img { width: 300px; }
+  			.ms-slider, .ms-slider__words {
+    			font-size: 28px;
+  			}
+		}
+
+		@media only screen and (max-width: 580px) {
 			html, body{ font-size: 24px; }
 			img { width: 300px; }
   			.ms-slider, .ms-slider__words {
@@ -116,9 +124,9 @@
   			}
 		}
 
-		@media only screen and (max-width: 490px) and (orientation: landscape) {
+		@media only screen and (max-width: 490px) {
 			html, body{ font-size: 24px; }
-			img { width: 300px; }
+			img { width: 260px; }
   			.ms-slider, .ms-slider__words {
     			font-size: 20px;
   			}
@@ -127,9 +135,9 @@
   			}
 		}
 
-		@media only screen and (max-width: 410px) and (orientation: landscape) {
+		@media only screen and (max-width: 410px) {
 			html, body{ font-size: 24px; }
-			img { width: 300px; }
+			img { width: 240px; }
   			.ms-slider, .ms-slider__words {
     			font-size: 18px;
   			}
@@ -138,7 +146,7 @@
   			}
 		}
 
-		@media only screen and (max-width: 368px) and (orientation: landscape) {
+		@media only screen and (max-width: 368px) {
 			html body { font-size: 20px; }
 			img { width: 240px; }
   			.ms-slider, .ms-slider__words {
@@ -149,7 +157,7 @@
   			}
 		}
 	
-		@media only screen and (max-width: 330px) and (orientation: landscape) {
+		@media only screen and (max-width: 330px) {
 			html body { font-size: 20px; }
 			img { width: 240px; }
   			.ms-slider, .ms-slider__words {
@@ -160,7 +168,7 @@
   			}
 		}
 
-		@media only screen and (max-width: 290px) and (orientation: landscape) {
+		@media only screen and (max-width: 290px) {
 			html body { font-size: 20px; }
 			img { width: 200px; }
   			.ms-slider, .ms-slider__words {
@@ -170,8 +178,8 @@
   				font-size: 8px;
   			}
 		}
-
-		@media only screen and (orientation: portrait) { /* max-width: 414px  */
+/*
+		@media only screen and (orientation: portrait) { 
 			html, body{ font-size: 48px; }
 			img { width: 500px; }
   			.ms-slider, .ms-slider__words {
@@ -181,7 +189,7 @@
   				font-size: 24px;
   			}
 		}
-
+*/
 		@keyframes glow {
   			from {
     			text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #737373, 0 0 3px #737373, 0 0 3px #737373, 0 0 3px #737373, 0 0 3px #737373;
