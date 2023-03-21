@@ -407,6 +407,15 @@ footer{
 	color: #a5a5e9;
 }
 
+.footer_col_link_inactive{
+	display: inline-block;
+	font-size: .62rem;
+	line-height: 250%;
+	color: #aaaaaa;
+	text-decoration: none;
+	margin: 0;
+}
+
 .divider{
 	position: relative;
 	background-color: rgb(205, 205, 205);
