@@ -3,6 +3,12 @@
 $(document).ready(function(){
 	goHome();
 	goContactUs();
+
+	// Mobile
+	goHomeMob();
+	clickHamburger();
+	clickHamburgerItem("#products_dropdown_mob", "#products_list_mob");
+	clickHamburgerItem("#developers_dropdown_mob", "#developers_list_mob");
 });
 
 function goHome(){
@@ -44,6 +50,77 @@ function handleForm(){
 			$("#send_btn").css("background-color", "#333333");
 		});
 	});
+}
+
+/* Mobile */
+
+function goHomeMob(){
+	$("img#menu_logo_mob").on("click", function(event){
+		window.location.pathname = "live/index.html";
+	});
+}
+
+function clickHamburger(){
+	$("#ham_btn").on("click", function(event){
+		var state = $(this).attr('data-state');
+		if (state == "closed") {
+			$(this).attr('data-state', "open");
+			$(this).attr('aria-expanded', "true");
+			$("#ham_btn>div#ham").addClass("hamburger_open");
+			$("#ham_btn>div#ham").attr('aria-expanded', "true")
+			$("#ham_btn>div#ham>div#ham_top").addClass("hamburger_top_open");
+			$("#ham_btn>div#ham>div#ham_bottom").addClass("hamburger_bottom_open");
+			// Open menu
+			$("#menu_wrap_mob").css('display', "block");
+			$("#menu_wrap_mob").attr('data-state', "open");
+		} else {
+			$(this).attr('data-state', "closed");
+			$(this).attr('aria-expanded', "false");
+			$("#ham_btn>div#ham").removeClass("hamburger_open");
+			$("#ham_btn>div#ham").attr('aria-expanded', "false")
+			$("#ham_btn>div#ham>div#ham_top").removeClass("hamburger_top_open");
+			$("#ham_btn>div#ham>div#ham_bottom").removeClass("hamburger_bottom_open");
+			// Close menu
+			$("#menu_wrap_mob").css('display', "none");
+			$("#menu_wrap_mob").attr('data-state', "closed");
+			// Close submenus
+			closeHamburgerItem("#products_dropdown_mob", "#products_list_mob");
+			closeHamburgerItem("#developers_dropdown_mob", "#developers_list_mob");
+		}
+	});
+}
+
+function clickHamburgerItem(itemID, subItemID){
+	$(itemID).on("click", function(event){
+		var state = $(itemID + ">div").attr('data-state');
+		if (state == "closed"){
+			$(itemID + ">div").attr('data-state', "open");
+			$(itemID + ">div>h3").attr('data-state', "open");
+			$(itemID + ">div>h3>button").attr('data-state', "open");
+			$(itemID + ">div>h3>button").attr('aria-expanded', "true");
+			$(itemID + ">div>div#products_list_mob").attr('data-state', "open");
+			$(itemID + ">div>div" + subItemID).removeAttr('hidden');
+		} else {
+			$(itemID + ">div").attr('data-state', "closed");
+			$(itemID + ">div>h3").attr('data-state', "closed");
+			$(itemID + ">div>h3>button").attr('data-state', "closed");
+			$(itemID + ">div>h3>button").attr('aria-expanded', "false");
+			$(itemID + ">div>div#products_list_mob").attr('data-state', "closed");
+			$(itemID + ">div>div" + subItemID).attr('hidden','');
+		}
+	});
+}
+
+function closeHamburgerItem(itemID, subItemID){
+	var state = $(itemID + ">div").attr('data-state');
+	if (state == "open"){
+		$(itemID + ">div").attr('data-state', "closed");
+		$(itemID + ">div>h3").attr('data-state', "closed");
+		$(itemID + ">div>h3>button").attr('data-state', "closed");
+		$(itemID + ">div>h3>button").attr('aria-expanded', "false");
+		$(itemID + ">div>div#products_list_mob").attr('data-state', "closed");
+		$(itemID + ">div>div" + subItemID).attr('hidden','');
+	}
 }
 
 

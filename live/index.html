@@ -45,76 +45,163 @@
 <body>
 	<div id="wrapper">
 		<header>
-			<img id="menu_logo" src="images/new_logo_allwhite_comfortaa.png"/>
-			<div id="menu">
-				<li style="position: relative;">
-					<div id="products_drop" class="menu_icon">
-						<p style="margin: 0;">Products</p>
-						<i class="fa-solid fa-angle-down fa-xs fa-icon-hover"></i>
-					</div>
-					<div id="products_dropdown" class="dropdown">
-						<p class="dropdown_title">Cyphlens Payment Security</p>
-						<a id="callback_page" class="page" href="callbacks.html">
-							<div class="dropdown_entry">
-								<i class="fa-solid fa-phone fa-fw"></i>
-								<h3 class="dropdown_entry_h3">Electronic Wire Callbacks</h3>
-							</div>
-						</a>
-						<div class="dropdown_entry">
-							<i class="fa-solid fa-money-check-dollar fa-fw"></i>
-							<h3 class="dropdown_entry_h3 text_inactive">Subscription Payments</h3>
+			<div class="menu_main">
+				<img id="menu_logo" src="images/new_logo_allwhite_comfortaa.png"/>
+				<ul id="menu" data-orientation="horizontal">
+					<li style="position: relative;">
+						<div id="products_drop" class="menu_icon">
+							<p style="margin: 0;">Products</p>
+							<i class="fa-solid fa-angle-down fa-xs fa-icon-hover"></i>
 						</div>
-						<p class="dropdown_title">Cyphlens Cyber-risk</p>
-						<a id="bec_page" class="page" href="bec.html">
+						<div id="products_dropdown" class="dropdown">
+							<p class="dropdown_title">Cyphlens Payment Security</p>
+							<a id="callback_page" class="page" href="callbacks.html">
+								<div class="dropdown_entry">
+									<i class="fa-solid fa-phone fa-fw"></i>
+									<h3 class="dropdown_entry_h3">Electronic Wire Callbacks</h3>
+								</div>
+							</a>
 							<div class="dropdown_entry">
-								<i class="fa-solid fa-envelope-circle-check fa-fw"></i>
-								<h3 class="dropdown_entry_h3">BEC Resiliency</h3>
+								<i class="fa-solid fa-money-check-dollar fa-fw"></i>
+								<h3 class="dropdown_entry_h3 text_inactive">Subscription Payments</h3>
 							</div>
-						</a>
-						<a id="twofa_page" class="page" href="twoway2fa.html">
+							<p class="dropdown_title">Cyphlens Cyber-risk</p>
+							<a id="bec_page" class="page" href="bec.html">
+								<div class="dropdown_entry">
+									<i class="fa-solid fa-envelope-circle-check fa-fw"></i>
+									<h3 class="dropdown_entry_h3">BEC Resiliency</h3>
+								</div>
+							</a>
+							<a id="twofa_page" class="page" href="twoway2fa.html">
+								<div class="dropdown_entry">
+									<i class="fa-solid fa-right-left fa-fw"></i>
+									<h3 class="dropdown_entry_h3">Two-way 2FA</h3>
+								</div>
+							</a>
+							<p class="dropdown_title">Cyphlens Crypto</p>
 							<div class="dropdown_entry">
-								<i class="fa-solid fa-right-left fa-fw"></i>
-								<h3 class="dropdown_entry_h3">Two-way 2FA</h3>
+								<i class="fa-solid fa-text-slash fa-fw"></i>
+								<h3 class="dropdown_entry_h3 text_inactive">Seed-phrase Security</h3>
 							</div>
-						</a>
-						<p class="dropdown_title">Cyphlens Crypto</p>
-						<div class="dropdown_entry">
-							<i class="fa-solid fa-text-slash fa-fw"></i>
-							<h3 class="dropdown_entry_h3 text_inactive">Seed-phrase Security</h3>
+							<div class="dropdown_entry">
+								<i class="fas fa-braille fa-fw"></i>
+								<h3 class="dropdown_entry_h3 text_inactive">Ephemeral Wallet</h3>
+							</div>
 						</div>
-						<div class="dropdown_entry">
-							<i class="fas fa-braille fa-fw"></i>
-							<h3 class="dropdown_entry_h3 text_inactive">Ephemeral Wallet</h3>
+					</li>
+					<li style="position: relative;">
+						<div id="developers_drop" class="menu_icon">
+							<p style="margin: 0;">Developers</p>
+							<i id="test" class="fa-solid fa-angle-down fa-xs fa-icon-hover"></i>
 						</div>
-					</div>
-				</li>
-				<li style="position: relative;">
-					<div id="developers_drop" class="menu_icon">
-						<p style="margin: 0;">Developers</p>
-						<i id="test" class="fa-solid fa-angle-down fa-xs fa-icon-hover"></i>
-					</div>
-					<div id="developers_dropdown" class="dropdown">
-						<p class="dropdown_title">Cyphlens Documentation</p>
-						<a href="https://cyphlens.com/docs/api-reference.html">
-							<div class="dropdown_entry">
-								<i class="fa-solid fa-terminal fa-fw"></i>
-								<h3 class="dropdown_entry_h3">Backend API</h3>
-							</div>
-						</a>
-						<a href="https://cyphlens.com/docs/sdk-reference.html">
-							<div class="dropdown_entry">
-								<i class="fa-solid fa-code fa-fw"></i>
-								<h3 class="dropdown_entry_h3">Javascript SDK</h3>
-							</div>
-						</a>
-					</div>
-				</li>
-				<li>
-					<a id="company_page" class="lognav page" href="company.html">Company</a>
-				</li>
-				<li><a class="lognav" href="https://dashboard.cyphme.com/">Login</a></li>
+						<div id="developers_dropdown" class="dropdown">
+							<p class="dropdown_title">Cyphlens Documentation</p>
+							<a href="https://cyphlens.com/docs/api-reference.html">
+								<div class="dropdown_entry">
+									<i class="fa-solid fa-terminal fa-fw"></i>
+									<h3 class="dropdown_entry_h3">Backend API</h3>
+								</div>
+							</a>
+							<a href="https://cyphlens.com/docs/sdk-reference.html">
+								<div class="dropdown_entry">
+									<i class="fa-solid fa-code fa-fw"></i>
+									<h3 class="dropdown_entry_h3">Javascript SDK</h3>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li>
+						<a id="company_page" class="lognav page" href="company.html">Company</a>
+					</li>
+					<li><a class="lognav" href="https://dashboard.cyphme.com">Login</a></li>
+				</ul>
+				<button class="button light_btn anim_btn contact_us"><span>Contact&nbsp;Us</span></button>
 			</div>
-			<button class="button light_btn anim_btn contact_us"><span>Contact&nbsp;Us</span></button>
+			<div style="position: relative;">
+				<ul class="menu_mobile" data-orientation="vertical">
+					<img id="menu_logo_mob" src="images/logo-white-stronger.png"/>
+					<li>
+						<button id="ham_btn" class="hamburger_btn" data-state="closed" aria-expanded="false">
+							<div id="ham" class="hamburger" role="button" aria-expanded="false">
+								<div id="ham_top" class="hamburger_top"></div>
+								<div id="ham_bottom" class="hamburger_bottom"></div>
+							</div>
+						</button>
+						<div id="menu_wrap_mob" class="menu_wrap_mob" data-state="closed" data-orientation="vertical" dir="ltr">
+							<div class="menu_body_mob" style="opacity: 1; z-index: -1; transform: none;">
+								<div id="products_dropdown_mob" class="menu_item_mob">
+									<div data-state="closed">
+										<h3 data-state="closed" style="margin: 0; padding: 0;">
+											<button type="button" aria-expanded="false" data-state="closed" data-border="none" class="menu_btn_mob">
+												<h3 class="menu_title_mob">Products</h3>
+												<svg width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" size="24" aria-hidden="true">
+													<path d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z" fill="currentcolor" fill-rule="evenodd" clip-rule="evenodd"></path>
+												</svg>
+											</button>
+										</h3>
+										<div id="products_list_mob" data-state="closed" role="region" class="submenu_mob" style="--radix-accordion-content-height:var(--radix-collapsible-content-height); --radix-accordion-content-width:var(--radix-collapsible-content-width); --radix-collapsible-content-height:256px; --radix-collapsible-content-width:641px;" hidden>
+											<div style="opacity: 1;">
+												<a href="callbacks.html">
+													<div class="dropdown_entry_mob">
+														<i class="fa-solid fa-phone fa-fw fa-2xs"></i>
+														<h3 class="dropdown_entry_mob_h3">Electronic Wire Callbacks</h3>
+													</div>
+												</a>
+												<a href="bec.html">
+													<div class="dropdown_entry_mob">
+														<i class="fa-solid fa-envelope-circle-check fa-fw fa-2xs"></i>
+														<h3 class="dropdown_entry_mob_h3">BEC Resiliency</h3>
+													</div>
+												</a>
+												<a href="twoway2fa.html">
+													<div class="dropdown_entry_mob">
+														<i class="fa-solid fa-right-left fa-fw fa-2xs"></i>
+														<h3 class="dropdown_entry_mob_h3">Two-way 2FA</h3>
+													</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="developers_dropdown_mob" class="menu_item_mob">
+									<div data-state="closed">
+										<h3 data-state="closed" style="margin: 0; padding: 0;">
+											<button type="button" aria-expanded="false" data-state="closed" data-border="none" class="menu_btn_mob">
+												<h3 class="menu_title_mob">Developers</h3>
+												<svg width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" size="24" aria-hidden="true">
+													<path d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z" fill="currentcolor" fill-rule="evenodd" clip-rule="evenodd"></path>
+												</svg>
+											</button>
+										</h3>
+										<div id="developers_list_mob" data-state="closed" role="region" class="submenu_mob" style="--radix-accordion-content-height:var(--radix-collapsible-content-height); --radix-accordion-content-width:var(--radix-collapsible-content-width); --radix-collapsible-content-height:256px; --radix-collapsible-content-width:641px;" hidden>
+											<div style="opacity: 1;">
+												<a href="https://cyphlens.com/docs/api-reference.html">
+													<div class="dropdown_entry_mob">
+														<i class="fa-solid fa-terminal fa-fw fa-2xs"></i>
+														<h3 class="dropdown_entry_mob_h3">Backend API</h3>
+													</div>
+												</a>
+												<a href="https://cyphlens.com/docs/sdk-reference.html">
+													<div class="dropdown_entry_mob">
+														<i class="fa-solid fa-code fa-fw fa-2xs"></i>
+														<h3 class="dropdown_entry_mob_h3">Javascript SDK</h3>
+													</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<a href="company.html" class="menu_link_mob" data-radix-collection-item data-tabindex tabindex="-1">
+									<div data-tabindex tabindex="-1"><h3 class="menu_title_link_mob">Company</h3></div>
+								</a>
+								<a href="https://dashboard.cyphme.com" class="menu_link_mob menu_item_last_mob" data-radix-collection-item data-tabindex tabindex="-1">
+									<div data-tabindex tabindex="-1"><h3 class="menu_title_link_mob">Login</h3></div>
+								</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</header>
 		<main>
 			<div id="main">

@@ -51,13 +51,15 @@ header{
 	position: relative;
 	z-index: 2;
 
+	/*background: #1e1c97 linear-gradient(90deg,#070561,rgba(7,5,97,0));*/
+}
+
+.menu_main{
 	display: flex;
 	flex-direction: row;
 	align-items: flex-end;
 	justify-content: space-between;
 	padding: .5rem 1rem;
-
-	/*background: #1e1c97 linear-gradient(90deg,#070561,rgba(7,5,97,0));*/
 }
 
 #menu{
@@ -1068,3 +1070,230 @@ p.mod{
   right: 0;
 }
 
+/* MOBILE */
+
+.menu_mobile{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: .15rem 0 .15rem .5rem;
+
+	position: fixed;
+	top: 0px;
+	width: 100vw;
+	z-index: 100;
+	background-color: #191919;;
+}
+
+img#menu_logo_mob{
+	width: 30px;
+	cursor: pointer;
+}
+
+.hamburger_btn{
+	color: rgb(242, 244, 248);
+	background-color: transparent;
+	border: none;
+}
+
+.hamburger_btn[data-state="open"]::before {
+    content: "";
+    position: absolute;
+    top: 4rem;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(9, 6, 40);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.hamburger{
+	cursor: pointer;
+  height: 48px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0, 0, 0, 1) 0s;
+  user-select: none;
+  width: 48px;
+  outline: none;
+  transform: none;
+}
+
+.hamburger_open{
+	transform: rotate(-90deg);
+}
+
+.hamburger_top{
+	background: currentcolor;
+  height: 2px;
+  left: 14px;
+  position: absolute;
+  width: 20px;
+  top: 19px;
+  transition: all 0.4s cubic-bezier(0, 0, 0, 1) 0s;
+  transform: none;
+}
+
+.hamburger_bottom{
+	background: currentcolor;
+	height: 2px;
+	left: 14px;
+	position: absolute;
+	width: 20px;
+	top: 27px;
+	transition: all 0.4s cubic-bezier(0, 0, 0, 1) 0s;
+	transform: none;
+}
+
+.hamburger_top_open{
+	transform: rotate(-45deg) translate(-2.84px, 2.84px);
+}
+
+.hamburger_bottom_open{
+	transform: rotate(45deg) translate(-2.84px, -2.84px);
+}
+
+.menu_wrap_mob{
+	z-index: 100;
+	position: fixed;
+	top: 2.55rem;
+	left: 0px;
+	width: 100vw;
+	display: none;
+}
+
+.menu_wrap_mob[data-state="open"] {
+    border: 1px solid rgb(203, 211, 226);
+}
+
+.menu_body_mob{
+	display: flex;
+	flex-direction: column;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	justify-content: center;
+	background-color: rgb(255, 255, 255);
+	box-shadow: rgb(0 0 0 / 10%) 0px 8px 16px;
+	padding-bottom: 0.5rem;
+}
+
+.menu_item_mob{
+	width: 100%;
+	border-bottom: 1px solid rgb(203, 211, 226);
+}
+
+.menu_btn_mob{
+	width: 100%;
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	align-items: center;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-image: initial;
+	border-bottom: 1px solid rgb(203, 211, 226);
+	background-color: transparent;
+	padding: 1rem;
+}
+
+.menu_btn_mob[data-border="none"] {
+	border-bottom: 1px solid transparent;
+}
+
+.menu_btn_mob[data-state="open"] h3 {
+    color: rgb(30, 28, 151);
+}
+
+.menu_btn_mob[data-state="open"] svg {
+	transform: rotate(180deg);
+	transition: all 300ms ease 0s;
+}
+
+.menu_title_mob{
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	gap: 0.5rem;
+	font-weight: 700;
+	font-size: 0.65rem;
+	color: rgb(11, 12, 14);
+}
+
+h3.menu_title_mob{
+	margin: 0;
+	padding: 0;
+}
+
+.submenu_mob{
+	font-size: 1rem;
+	line-height: 177%;
+	color: rgb(34, 37, 42);
+}
+
+.menu_link_mob{
+	width: 100%;
+	border-bottom: 1px solid rgb(203, 211, 226);
+}
+
+.menu_link_mob>div{
+	display: flex;
+	flex-direction: row;
+	-webkit-box-align: center;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 1rem;
+} 
+
+a.menu_link_mob:hover, a.menu_link_mob:visited, a.menu_link_mob:active{
+	text-decoration: none;
+}
+
+h3.menu_title_link_mob{
+	color: rgb(11, 12, 14);
+  font-weight: 700;
+  font-size: 0.65rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu_item_last_mob{
+	border-bottom: 0;
+}
+
+.dropdown_entry_mob{
+	display: flex;
+	flex-direction: row;
+	-webkit-box-align: center;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 1.25rem;
+	color: #1e1c97;
+}
+
+h3.dropdown_entry_mob_h3{
+	font-weight: 600;
+	font-size: 0.65rem;
+	color: rgb(11, 12, 14);
+	margin: 0;
+}
+
+
+/* Transitions */
+@media (min-width: 768px){
+	.menu_mobile{
+	    display: none;
+	}
+}
+
+@media (max-width: 768px){
+	.menu_main{
+	    display: none;
+	}
+	header{
+		border-radius: 0;
+	}
+}
