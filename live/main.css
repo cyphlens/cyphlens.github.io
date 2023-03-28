@@ -511,11 +511,12 @@ footer{
 
 img#p2s{
 	height: 100px; 
-	padding-right: 40px;
+	padding-right: 20px;
 }
 
 img#p2d{
 	height: 300px;
+	margin: 0 -30px;
 }
 
 img#cyphlens{
@@ -1480,10 +1481,12 @@ h3.dropdown_entry_mob_h3{
 		padding-bottom: 0;
 	}
 	img#p2s{
-		height: 180px; 
+		height: 180px;
+		padding-right: 40px;
 	}
 	img#p2d{
 		height: 400px;
+		margin: 0;
 	}
 	img#cyphlens{
 		width: 400px;
