@@ -25,6 +25,10 @@ function goContactUs(){
 }
 
 function handleForm(){
+	$("#contact_form").on("change",'#country_dropdown',function(){
+    	$("#country_dropdown").removeClass('is_placeholder');
+    });
+
 	$("#contact_form").submit(function(event){
 		event.preventDefault(); //prevent default action 
 		//$("#send_btn").html('<i class="fas fa-circle-notch fa-sm fa-spin"></i>&nbsp;&nbsp;Send');

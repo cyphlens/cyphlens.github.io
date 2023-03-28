@@ -727,7 +727,7 @@ h4.quote_text{
 }
 
 .contact_form_wrapper{
-	background-color: #f2f4f8;
+	background-color: #ffffff;
 	margin-top: -3rem;
 }
 
@@ -735,7 +735,7 @@ h4.quote_text{
 	position: relative;
 	margin: auto;
   width: 80%;
-	background-color: #f2f4f8;
+	background-color: #ffffff;
 	color: #0a0d14;
 	display: flex;
 	flex-direction: column;
@@ -815,7 +815,11 @@ span.required{
     border-color: rgba(82,168,236,.8);
 }
 
-.form_input option:disabled {
+select.is-placeholder {
+    color: #bfbfbf;
+}
+
+select.form_input>option:disabled {
     color: #bfbfbf;
 }
 
