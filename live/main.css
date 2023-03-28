@@ -201,6 +201,12 @@ main{
 	margin: 100px 0;
 }
 
+#top_section_mod{
+	position: relative;
+	padding: 50px 0;
+	margin: 100px 0;
+}
+
 #top_section_content{
 	display: flex;
 	flex-direction: column;
@@ -501,6 +507,19 @@ footer{
 	justify-content: center;
 
 	flex-direction: row;
+}
+
+img#p2s{
+	height: 100px; 
+	padding-right: 40px;
+}
+
+img#p2d{
+	height: 300px;
+}
+
+img#cyphlens{
+	width: 300px;
 }
 
 .product_subsection>div#left_image{
@@ -1454,5 +1473,19 @@ h3.dropdown_entry_mob_h3{
 	}
 	.section2>div#product_bottom{
 		width: 80%;
+	}
+	#top_section_mod{
+		margin-top: 500px; 
+		margin-bottom: 0; 
+		padding-bottom: 0;
+	}
+	img#p2s{
+		height: 180px; 
+	}
+	img#p2d{
+		height: 400px;
+	}
+	img#cyphlens{
+		width: 400px;
 	}
 }
