@@ -223,7 +223,7 @@ main{
 	gap: 0;
 	width: 95%;
 	margin: auto;
-	padding: 180px 0;
+	padding: 120px 0;
 }
 
 #section1>div#left{
@@ -241,7 +241,7 @@ main{
 }
 
 .section2{
-	padding: 180px 0;
+	padding: 120px 0;
 }
 
 .section2>div#top{
@@ -483,7 +483,7 @@ footer{
 
 	width: 95%;
 
-	padding: 160px 0;
+	padding: 120px 0;
 	margin: auto;
 
 	gap: 2rem;
@@ -1403,6 +1403,15 @@ h3.dropdown_entry_mob_h3{
 /* Handle page sections */
 
 @media (min-width: 1280px){
+	#section1{
+		padding: 180px 0;
+	}
+	.section2{
+		padding: 180px 0;
+	}
+	.product_subsection{
+		padding: 160px 0;
+	}
 	.section2>div#product_bottom{
 		grid-template-columns: repeat(4,1fr);
   	grid-template-rows: 1fr;
