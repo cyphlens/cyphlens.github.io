@@ -625,7 +625,7 @@ li.list_item{
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	padding: 2rem 2rem;
+	padding: 2rem 1rem;
 	gap: 2rem;
 	width: 75%;
 	max-width: 1200px;
@@ -1474,6 +1474,9 @@ h3.dropdown_entry_mob_h3{
 	}
 	.section2>div#product_bottom{
 		width: 80%;
+	}
+	.quote_card{
+		padding: 2rem 2rem;
 	}
 	#top_section_mod{
 		margin-top: 500px; 
