@@ -101,7 +101,7 @@ header{
   flex-direction: row;
   align-items: center;
   gap: 0.8rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.9rem;
   transition: .2s;
   border: 1px solid transparent;
   box-sizing: border-box;
