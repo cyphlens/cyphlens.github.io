@@ -13,13 +13,13 @@ $(document).ready(function(){
 
 function goHome(){
 	$("img#menu_logo").on("click", function(event){
-		window.location.pathname = "live/index.html";
+		window.location.pathname = "index.html";
 	});
 }
 
 function goContactUs(){
 	$("button.contact_us").on("click", function(event){
-		window.location.pathname = "live/contact.html";
+		window.location.pathname = "contact.html";
 	});
 	handleForm();
 }
@@ -60,7 +60,7 @@ function handleForm(){
 
 function goHomeMob(){
 	$("img#menu_logo_mob").on("click", function(event){
-		window.location.pathname = "live/index.html";
+		window.location.pathname = "index.html";
 	});
 }
 
