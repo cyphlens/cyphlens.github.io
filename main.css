@@ -496,7 +496,7 @@ footer{
 	align-items: center;
 }
 
-.product_subsub{
+div.product_subsub{
 	padding-top: 100px;
 	padding-bottom: 0px;
 }
@@ -1425,7 +1425,7 @@ h3.dropdown_entry_mob_h3{
 		padding: 180px 0;
 	}
 	.product_subsection{
-		padding: 40px 0; /* 160px */
+		padding: 160px 0;
 	}
 	.section2>div#product_bottom{
 		grid-template-columns: repeat(4,1fr);
