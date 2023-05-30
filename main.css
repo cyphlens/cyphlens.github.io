@@ -528,6 +528,17 @@ img#cyphlens{
 	width: 300px;
 }
 
+img#cyphlens3{
+	width: 400px;
+}
+
+img#badge1, img#badge2{
+		height: 41px;
+}
+img#qr1, img#qr2{
+		height: 118px;
+}
+
 .product_subsection>div#left_image{
 	height: 380px;
 
@@ -1543,5 +1554,20 @@ h3.dropdown_entry_mob_h3{
 	}
 	img#cyphlens{
 		width: 400px;
+	}
+	img#cyphlens3{
+		width: 700px;
+	}
+	img#badge1, img#badge2{
+		height: 51px;
+	}
+	img#qr1, img#qr2{
+		height: 158px;
+	}
+}
+
+@media (max-width: 1024px){
+	.product_subsection>div#left_image_flex{
+		grid-row: 1;
 	}
 }
