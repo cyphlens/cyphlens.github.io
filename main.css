@@ -532,7 +532,7 @@ img#cyphlens3{
 	width: 300px;
 }
 
-img#badge1, img#badge2{
+img#badge1, img#badge2, img#badge3{
 		height: 41px;
 }
 img#qr1, img#qr2{
@@ -1558,7 +1558,7 @@ h3.dropdown_entry_mob_h3{
 	img#cyphlens3{
 		width: 700px;
 	}
-	img#badge1, img#badge2{
+	img#badge1, img#badge2, img#badge3{
 		height: 51px;
 	}
 	img#qr1, img#qr2{
