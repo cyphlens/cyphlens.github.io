@@ -408,7 +408,7 @@ The SDK script must be included in the <code>head</code> section of the webpage.
 </span></code></pre>
 <p>This endpoint returns the status of a Cyphlens verification process initiated by the end-user using the swipe functionality within the Cyphlens app.</p>
 
-<p>Both the Cyphlens image and the corresponding sessionId are returned by the <a href="https://www.cyphme.com/docs">backend API</a> calls <code>/login/getCyph</code> and <code>/transaction/getCyph</code> used for requesting a Cyphlens Image for a user.</p>
+<p>Both the Cyphlens image and the corresponding sessionId are returned by the <a href="https://www.cyphme.com/docs">backend API</a> endpoint <code>/login/getCyph</code> used for requesting a Cyphlens image for a user.</p>
 <h3 id='javascript-request'>Javascript Request</h3>
 <p><code>CyphClient.getStatus(sessionId, callbackFunction)</code></p>
 <h3 id='request-parameters'>Request Parameters</h3>
@@ -469,7 +469,7 @@ The SDK script must be included in the <code>head</code> section of the webpage.
 </tbody></table>
 
 <aside class="warning">
-Remember — a Cyphlens Image used for either login 2FA or transaction verification is valid for only 60 seconds!
+Remember — a Cyphlens Image used for login 2FA is valid only for 60 seconds!
 </aside>
 <h1 id='errors'>Errors</h1>
 <p>The Cyphlens API uses the following error codes:</p>
