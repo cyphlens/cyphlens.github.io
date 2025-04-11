@@ -839,6 +839,7 @@ Remember — Cyphlens images can be generated only for ACTIVE users!
     <span class="p">...</span>
     <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"form_wrapper"</span><span class="o">&gt;</span>
         <span class="p">...</span>
+	<span class="c1">// Make a Cyphlens image open directly in the mobile app</span>
         <span class="o">&lt;</span><span class="nx">a</span> <span class="kr">href</span><span class="o">=</span><span class="s2">"cyphme://www.cyphme.com/verifydocument?sessionId={{sessionId}}"</span><span class="o">&gt;</span>
             <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"cyphlens-image"</span><span class="o">&gt;</span>
                 <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"svg"</span> <span class="nx">height</span><span class="o">=</span><span class="s2">"210px"</span> <span class="nx">ng</span><span class="o">-</span><span class="nx">src</span><span class="o">=</span><span class="s2">"{{imageURL}}"</span><span class="o">/&gt;</span>
@@ -853,7 +854,7 @@ Remember — Cyphlens images can be generated only for ACTIVE users!
 
 <p><img src="./images/cyphlens_demo.png"></p>
 <aside class="success">
-Remember — In order to enable a user to 'click' on a Cyphlens image for a fully mobile user experience, you need to wrap the Cyphlens image in an HTML &lt;a&gt; tag as shown in the code example on the right.
+Remember — In order to enable a user to 'click' on a Cyphlens image and open it directly in the mobile app, you need to wrap the Cyphlens image in an HTML &lt;a&gt; tag as shown in the code example on the right.
 </aside>
 <h2 id='get-a-login-cyphlens-image'>Get a Login Cyphlens Image</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
