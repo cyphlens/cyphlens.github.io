@@ -413,7 +413,7 @@ footer{
 }
 
 .footer_col_link_inactive{
-	display: inline-block;
+	display: none;      /*inline-block;*/
 	font-size: .62rem;
 	line-height: 250%;
 	color: #aaaaaa;
